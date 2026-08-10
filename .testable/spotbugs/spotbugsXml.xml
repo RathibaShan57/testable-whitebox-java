@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BugCollection sequence='0' release='' analysisTimestamp='1786354171324' version='4.8.6' timestamp='1786354171324'><Project projectName='Testable Metrics Java Sample'><Jar>C:\Users\Rathiba\Source\Java\testable-whitebox-java\target\classes</Jar><AuxClasspathEntry>C:\Users\Rathiba\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar</AuxClasspathEntry><AuxClasspathEntry>C:\Users\Rathiba\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.10\jackson-databind-2.9.10.jar</AuxClasspathEntry><AuxClasspathEntry>C:\Users\Rathiba\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.10\jackson-annotations-2.9.10.jar</AuxClasspathEntry><AuxClasspathEntry>C:\Users\Rathiba\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.10\jackson-core-2.9.10.jar</AuxClasspathEntry><AuxClasspathEntry>C:\Users\Rathiba\.m2\repository\org\apache\logging\log4j\log4j-core\2.14.1\log4j-core-2.14.1.jar</AuxClasspathEntry><AuxClasspathEntry>C:\Users\Rathiba\.m2\repository\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar</AuxClasspathEntry><Plugin id='com.h3xstream.findsecbugs' enabled='true'></Plugin><SrcDir>C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java</SrcDir><SrcDir>C:\Users\Rathiba\Source\Java\testable-whitebox-java\target\generated-sources\annotations</SrcDir><WrkDir>C:\Users\Rathiba\Source\Java\testable-whitebox-java\target</WrkDir></Project><BugInstance instanceOccurrenceNum='0' instanceHash='a4ef026f99c8ccf5e4a0c84c3ac2b44d' cweid='78' rank='12' abbrev='SECCI' category='SECURITY' priority='2' type='COMMAND_INJECTION' instanceOccurrenceMax='0'><ShortMessage>Potential Command Injection</ShortMessage><LongMessage>This usage of java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/lang/Process;' name='runSystemCommand' primary='true'><SourceLine endBytecode='105' classname='com.testable.whitebox.AuthService' start='88' end='90' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.runSystemCommand(String)</Message></Method><SourceLine endBytecode='9' classname='com.testable.whitebox.AuthService' start='88' end='88' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='9' primary='true'><Message>At AuthService.java:[line 88]</Message></SourceLine><String role='Sink method' value='java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process;'><Message>Sink method java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process;</Message></String><String role='Sink parameter' value='0'><Message>Sink parameter 0</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='fbb14896c689d1692c4a798d329e6781' cweid='259' rank='12' abbrev='SECHCP' category='SECURITY' priority='2' type='HARD_CODE_PASSWORD' instanceOccurrenceMax='1'><ShortMessage>Hard coded password</ShortMessage><LongMessage>Hard coded password found</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;Ljava/lang/String;)Z' name='authenticate' primary='true'><SourceLine endBytecode='149' classname='com.testable.whitebox.AuthService' start='96' end='99' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.authenticate(String, String)</Message></Method><SourceLine endBytecode='16' classname='com.testable.whitebox.AuthService' start='99' end='99' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='16' primary='true'><Message>At AuthService.java:[line 99]</Message></SourceLine><String role='Sink method' value='java/lang/String.equals(Ljava/lang/Object;)Z'><Message>Sink method java/lang/String.equals(Ljava/lang/Object;)Z</Message></String><String role='Sink parameter' value='0'><Message>Sink parameter 0</Message></String><String role='Unknown source' value='com/testable/whitebox/AuthService.authenticate(Ljava/lang/String;Ljava/lang/String;)Z parameter 0'><Message>Unknown source com/testable/whitebox/AuthService.authenticate(Ljava/lang/String;Ljava/lang/String;)Z parameter 0</Message></String><String role='Method usage' value='not detected'><Message>Method usage not detected</Message></String></BugInstance><BugInstance instanceOccurrenceNum='1' instanceHash='fbb14896c689d1692c4a798d329e6781' cweid='259' rank='12' abbrev='SECHCP' category='SECURITY' priority='2' type='HARD_CODE_PASSWORD' instanceOccurrenceMax='1'><ShortMessage>Hard coded password</ShortMessage><LongMessage>Hard coded password found</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;Ljava/lang/String;)Z' name='authenticate' primary='true'><SourceLine endBytecode='149' classname='com.testable.whitebox.AuthService' start='96' end='99' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.authenticate(String, String)</Message></Method><SourceLine endBytecode='25' classname='com.testable.whitebox.AuthService' start='100' end='100' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='25' primary='true'><Message>At AuthService.java:[line 100]</Message></SourceLine><String role='Sink method' value='java/lang/String.equals(Ljava/lang/Object;)Z'><Message>Sink method java/lang/String.equals(Ljava/lang/Object;)Z</Message></String><String role='Sink parameter' value='0'><Message>Sink parameter 0</Message></String><String role='Unknown source' value='com/testable/whitebox/AuthService.authenticate(Ljava/lang/String;Ljava/lang/String;)Z parameter 0'><Message>Unknown source com/testable/whitebox/AuthService.authenticate(Ljava/lang/String;Ljava/lang/String;)Z parameter 0</Message></String><String role='Method usage' value='not detected'><Message>Method usage not detected</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='8a30db868f1504e07c0ecf9e61b69b8f' cweid='502' rank='10' abbrev='SECOBDES' category='SECURITY' priority='1' type='OBJECT_DESERIALIZATION' instanceOccurrenceMax='0'><ShortMessage>Object deserialization is used in {1}</ShortMessage><LongMessage>Object deserialization is used in com.testable.whitebox.AuthService.deserialize(String)</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/lang/Object;' name='deserialize' primary='true'><SourceLine endBytecode='274' classname='com.testable.whitebox.AuthService' start='76' end='81' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.deserialize(String)</Message></Method><SourceLine endBytecode='25' classname='com.testable.whitebox.AuthService' start='78' end='78' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='25' primary='true'><Message>At AuthService.java:[line 78]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='3cf0ff9b4b5cb8196cee709174d91fe0' cweid='396' rank='17' abbrev='REC' category='STYLE' priority='2' type='REC_CATCH_EXCEPTION' instanceOccurrenceMax='1'><ShortMessage>Exception is caught when Exception is not thrown</ShortMessage><LongMessage>Exception is caught when Exception is not thrown in com.testable.whitebox.AuthService.deserialize(String)</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/lang/Object;' name='deserialize' primary='true'><SourceLine endBytecode='274' classname='com.testable.whitebox.AuthService' start='76' end='81' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.deserialize(String)</Message></Method><SourceLine endBytecode='58' classname='com.testable.whitebox.AuthService' start='80' end='80' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='58' primary='true'><Message>At AuthService.java:[line 80]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='99948e4c163e39ef629c15e444b50289' cweid='396' rank='17' abbrev='REC' category='STYLE' priority='2' type='REC_CATCH_EXCEPTION' instanceOccurrenceMax='0'><ShortMessage>Exception is caught when Exception is not thrown</ShortMessage><LongMessage>Exception is caught when Exception is not thrown in com.testable.whitebox.AuthService.getUser(String)</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/util/Map;' name='getUser' primary='true'><SourceLine endBytecode='492' classname='com.testable.whitebox.AuthService' start='50' end='62' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.getUser(String)</Message></Method><SourceLine endBytecode='155' classname='com.testable.whitebox.AuthService' start='58' end='58' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='155' primary='true'><Message>At AuthService.java:[line 58]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='1' instanceHash='3cf0ff9b4b5cb8196cee709174d91fe0' cweid='396' rank='20' abbrev='REC' category='STYLE' priority='3' type='REC_CATCH_EXCEPTION' instanceOccurrenceMax='1'><ShortMessage>Exception is caught when Exception is not thrown</ShortMessage><LongMessage>Exception is caught when Exception is not thrown in com.testable.whitebox.AuthService.deserialize(String)</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/lang/Object;' name='deserialize' primary='true'><SourceLine synthetic='true' endBytecode='274' classname='com.testable.whitebox.AuthService' start='76' end='81' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.deserialize(String)</Message></Method><SourceLine synthetic='true' endBytecode='274' classname='com.testable.whitebox.AuthService' start='76' end='81' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'><Message>At AuthService.java:[lines 76-81]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='7e7e94b0ec992df4c4eda5c93913a724' cweid='89' rank='12' abbrev='SECSQLIJDBC' category='SECURITY' priority='2' type='SQL_INJECTION_JDBC' instanceOccurrenceMax='0'><ShortMessage>Potential JDBC Injection</ShortMessage><LongMessage>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/util/Map;' name='getUser' primary='true'><SourceLine endBytecode='492' classname='com.testable.whitebox.AuthService' start='50' end='62' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.getUser(String)</Message></Method><SourceLine endBytecode='34' classname='com.testable.whitebox.AuthService' start='54' end='54' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='34' primary='true'><Message>At AuthService.java:[line 54]</Message></SourceLine><String role='Sink method' value='java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;'><Message>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;</Message></String><String role='Sink parameter' value='0'><Message>Sink parameter 0</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='4624126323b7dea96a95b2dfca24661' cweid='89' rank='10' abbrev='SQL' category='SECURITY' priority='1' type='SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE' instanceOccurrenceMax='0'><ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage><LongMessage>com.testable.whitebox.AuthService.getUser(String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/util/Map;' name='getUser' primary='true'><SourceLine endBytecode='70' classname='com.testable.whitebox.AuthService' start='50' end='62' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.getUser(String)</Message></Method><SourceLine endBytecode='34' classname='com.testable.whitebox.AuthService' start='54' end='54' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='34' primary='true'><Message>At AuthService.java:[line 54]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='fc22cf23962f255618df213ab05495ba' cweid='328' rank='10' abbrev='SECMD5' category='SECURITY' priority='1' type='WEAK_MESSAGE_DIGEST_MD5' instanceOccurrenceMax='0'><ShortMessage>MD2, MD4 and MD5 are weak hash functions</ShortMessage><LongMessage>This API MD5 (MDX) is not a recommended cryptographic hash function</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/lang/String;' name='hashPasswordInsecure' primary='true'><SourceLine endBytecode='150' classname='com.testable.whitebox.AuthService' start='29' end='33' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.hashPasswordInsecure(String)</Message></Method><SourceLine endBytecode='2' classname='com.testable.whitebox.AuthService' start='29' end='29' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='2' primary='true'><Message>At AuthService.java:[line 29]</Message></SourceLine><String value='MD5'><Message>Value MD5</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='84f121281c996597e217d7b76cee4f9f' cweid='328' rank='12' abbrev='SECSHA1' category='SECURITY' priority='2' type='WEAK_MESSAGE_DIGEST_SHA1' instanceOccurrenceMax='0'><ShortMessage>SHA-1 is a weak hash function</ShortMessage><LongMessage>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</LongMessage><Class classname='com.testable.whitebox.AuthService' primary='true'><SourceLine classname='com.testable.whitebox.AuthService' start='20' end='109' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java'><Message>At AuthService.java:[lines 20-109]</Message></SourceLine><Message>In class com.testable.whitebox.AuthService</Message></Class><Method isStatic='false' classname='com.testable.whitebox.AuthService' signature='(Ljava/lang/String;)Ljava/lang/String;' name='hashPasswordSha1' primary='true'><SourceLine endBytecode='150' classname='com.testable.whitebox.AuthService' start='40' end='44' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.AuthService.hashPasswordSha1(String)</Message></Method><SourceLine endBytecode='2' classname='com.testable.whitebox.AuthService' start='40' end='40' sourcepath='com/testable/whitebox/AuthService.java' sourcefile='AuthService.java' startBytecode='2' primary='true'><Message>At AuthService.java:[line 40]</Message></SourceLine><String value='SHA-1'><Message>Value SHA-1</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='1ee8cf9dc28bc428e9b4efe7b70b08af' cweid='176' rank='15' abbrev='SECUNI' category='SECURITY' priority='3' type='IMPROPER_UNICODE' instanceOccurrenceMax='2'><ShortMessage>Improper handling of Unicode transformations</ShortMessage><LongMessage>Improper handling of Unicode transformations such as case mapping and normalization.</LongMessage><Class classname='com.testable.whitebox.Calculator' primary='true'><SourceLine classname='com.testable.whitebox.Calculator' start='7' end='133' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java'><Message>At Calculator.java:[lines 7-133]</Message></SourceLine><Message>In class com.testable.whitebox.Calculator</Message></Class><Method isStatic='false' classname='com.testable.whitebox.Calculator' signature='(ILjava/lang/String;ZIIZLjava/lang/String;D)D' name='computeInsurancePremium' primary='true'><SourceLine endBytecode='520' classname='com.testable.whitebox.Calculator' start='88' end='133' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.Calculator.computeInsurancePremium(int, String, boolean, int, int, boolean, String, double)</Message></Method><SourceLine endBytecode='59' classname='com.testable.whitebox.Calculator' start='97' end='97' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java' startBytecode='59' primary='true'><Message>At Calculator.java:[line 97]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='1' instanceHash='1ee8cf9dc28bc428e9b4efe7b70b08af' cweid='176' rank='15' abbrev='SECUNI' category='SECURITY' priority='3' type='IMPROPER_UNICODE' instanceOccurrenceMax='2'><ShortMessage>Improper handling of Unicode transformations</ShortMessage><LongMessage>Improper handling of Unicode transformations such as case mapping and normalization.</LongMessage><Class classname='com.testable.whitebox.Calculator' primary='true'><SourceLine classname='com.testable.whitebox.Calculator' start='7' end='133' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java'><Message>At Calculator.java:[lines 7-133]</Message></SourceLine><Message>In class com.testable.whitebox.Calculator</Message></Class><Method isStatic='false' classname='com.testable.whitebox.Calculator' signature='(ILjava/lang/String;ZIIZLjava/lang/String;D)D' name='computeInsurancePremium' primary='true'><SourceLine endBytecode='520' classname='com.testable.whitebox.Calculator' start='88' end='133' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.Calculator.computeInsurancePremium(int, String, boolean, int, int, boolean, String, double)</Message></Method><SourceLine endBytecode='181' classname='com.testable.whitebox.Calculator' start='123' end='123' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java' startBytecode='181' primary='true'><Message>At Calculator.java:[line 123]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='2' instanceHash='1ee8cf9dc28bc428e9b4efe7b70b08af' cweid='176' rank='15' abbrev='SECUNI' category='SECURITY' priority='3' type='IMPROPER_UNICODE' instanceOccurrenceMax='2'><ShortMessage>Improper handling of Unicode transformations</ShortMessage><LongMessage>Improper handling of Unicode transformations such as case mapping and normalization.</LongMessage><Class classname='com.testable.whitebox.Calculator' primary='true'><SourceLine classname='com.testable.whitebox.Calculator' start='7' end='133' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java'><Message>At Calculator.java:[lines 7-133]</Message></SourceLine><Message>In class com.testable.whitebox.Calculator</Message></Class><Method isStatic='false' classname='com.testable.whitebox.Calculator' signature='(ILjava/lang/String;ZIIZLjava/lang/String;D)D' name='computeInsurancePremium' primary='true'><SourceLine endBytecode='520' classname='com.testable.whitebox.Calculator' start='88' end='133' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.Calculator.computeInsurancePremium(int, String, boolean, int, int, boolean, String, double)</Message></Method><SourceLine endBytecode='202' classname='com.testable.whitebox.Calculator' start='125' end='125' sourcepath='com/testable/whitebox/Calculator.java' sourcefile='Calculator.java' startBytecode='202' primary='true'><Message>At Calculator.java:[line 125]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='8db957f2aaa6cf7052d47e9fa7122fdc' rank='20' abbrev='Dm' category='I18N' priority='3' type='DM_CONVERT_CASE' instanceOccurrenceMax='0'><ShortMessage>Consider using Locale parameterized version of invoked method</ShortMessage><LongMessage>Use of non-localized String.toUpperCase() or String.toLowerCase() in com.testable.whitebox.DataProcessor.normalizeName(String)</LongMessage><Class classname='com.testable.whitebox.DataProcessor' primary='true'><SourceLine classname='com.testable.whitebox.DataProcessor' start='12' end='79' sourcepath='com/testable/whitebox/DataProcessor.java' sourcefile='DataProcessor.java'><Message>At DataProcessor.java:[lines 12-79]</Message></SourceLine><Message>In class com.testable.whitebox.DataProcessor</Message></Class><Method isStatic='false' classname='com.testable.whitebox.DataProcessor' signature='(Ljava/lang/String;)Ljava/lang/String;' name='normalizeName' primary='true'><SourceLine endBytecode='122' classname='com.testable.whitebox.DataProcessor' start='37' end='42' sourcepath='com/testable/whitebox/DataProcessor.java' sourcefile='DataProcessor.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.DataProcessor.normalizeName(String)</Message></Method><SourceLine endBytecode='15' classname='com.testable.whitebox.DataProcessor' start='41' end='41' sourcepath='com/testable/whitebox/DataProcessor.java' sourcefile='DataProcessor.java' startBytecode='15' primary='true'><Message>At DataProcessor.java:[line 41]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='1edf926af5e550f4a397045ec7f98e24' cweid='476' rank='13' abbrev='NP' category='STYLE' priority='2' type='NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE' instanceOccurrenceMax='0'><ShortMessage>Possible null pointer dereference due to return value of called method</ShortMessage><LongMessage>Possible null pointer dereference in com.testable.whitebox.FileHandler.writeText(Path, String) due to return value of called method</LongMessage><Class classname='com.testable.whitebox.FileHandler' primary='true'><SourceLine classname='com.testable.whitebox.FileHandler' start='12' end='65' sourcepath='com/testable/whitebox/FileHandler.java' sourcefile='FileHandler.java'><Message>At FileHandler.java:[lines 12-65]</Message></SourceLine><Message>In class com.testable.whitebox.FileHandler</Message></Class><Method isStatic='false' classname='com.testable.whitebox.FileHandler' signature='(Ljava/nio/file/Path;Ljava/lang/String;)Z' name='writeText' primary='true'><SourceLine endBytecode='197' classname='com.testable.whitebox.FileHandler' start='33' end='43' sourcepath='com/testable/whitebox/FileHandler.java' sourcefile='FileHandler.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.FileHandler.writeText(Path, String)</Message></Method><LocalVariable role='LOCAL_VARIABLE_UNKNOWN' pc='41' name='?' register='-1'><Message>Local variable stored in JVM register ?</Message></LocalVariable><SourceLine role='SOURCE_LINE_INVOKED' endBytecode='41' classname='com.testable.whitebox.FileHandler' start='37' end='37' sourcepath='com/testable/whitebox/FileHandler.java' sourcefile='FileHandler.java' startBytecode='41' primary='true'><Message>Method invoked at FileHandler.java:[line 37]</Message></SourceLine><SourceLine role='SOURCE_LINE_KNOWN_NULL' endBytecode='32' classname='com.testable.whitebox.FileHandler' start='39' end='39' sourcepath='com/testable/whitebox/FileHandler.java' sourcefile='FileHandler.java' startBytecode='32'><Message>Known null at FileHandler.java:[line 39]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='a117b4eda871527117b04083c55b9405' rank='19' abbrev='Dm' category='I18N' priority='1' type='DM_DEFAULT_ENCODING' instanceOccurrenceMax='0'><ShortMessage>Reliance on default encoding</ShortMessage><LongMessage>Found reliance on default encoding in com.testable.whitebox.PerformanceHotspots.allocateInLoop(int): new String(byte[])</LongMessage><Class classname='com.testable.whitebox.PerformanceHotspots' primary='true'><SourceLine classname='com.testable.whitebox.PerformanceHotspots' start='12' end='36' sourcepath='com/testable/whitebox/PerformanceHotspots.java' sourcefile='PerformanceHotspots.java'><Message>At PerformanceHotspots.java:[lines 12-36]</Message></SourceLine><Message>In class com.testable.whitebox.PerformanceHotspots</Message></Class><Method isStatic='false' classname='com.testable.whitebox.PerformanceHotspots' signature='(I)Ljava/util/List;' name='allocateInLoop' primary='true'><SourceLine endBytecode='188' classname='com.testable.whitebox.PerformanceHotspots' start='31' end='36' sourcepath='com/testable/whitebox/PerformanceHotspots.java' sourcefile='PerformanceHotspots.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.PerformanceHotspots.allocateInLoop(int)</Message></Method><Method isStatic='false' role='METHOD_CALLED' classname='java.lang.String' signature='([B)V' name='&lt;init&gt;'><SourceLine endBytecode='64' classname='java.lang.String' start='1439' end='1440' sourcepath='java/lang/String.java' sourcefile='String.java' startBytecode='0'></SourceLine><Message>Called method new String(byte[])</Message></Method><SourceLine endBytecode='28' classname='com.testable.whitebox.PerformanceHotspots' start='34' end='34' sourcepath='com/testable/whitebox/PerformanceHotspots.java' sourcefile='PerformanceHotspots.java' startBytecode='28' primary='true'><Message>At PerformanceHotspots.java:[line 34]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='ca8de5dcfc7733ef05f30350b1217ab5' cweid='117' rank='15' abbrev='SECCRLFLOG' category='SECURITY' priority='3' type='CRLF_INJECTION_LOGS' instanceOccurrenceMax='0'><ShortMessage>Potential CRLF Injection for logs</ShortMessage><LongMessage>This use of java/util/logging/Logger.info(Ljava/lang/String;)V might be used to include CRLF characters into log messages</LongMessage><Class classname='com.testable.whitebox.PiiLogger' primary='true'><SourceLine classname='com.testable.whitebox.PiiLogger' start='9' end='25' sourcepath='com/testable/whitebox/PiiLogger.java' sourcefile='PiiLogger.java'><Message>At PiiLogger.java:[lines 9-25]</Message></SourceLine><Message>In class com.testable.whitebox.PiiLogger</Message></Class><Method isStatic='false' classname='com.testable.whitebox.PiiLogger' signature='(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V' name='logStudentRecord' primary='true'><SourceLine endBytecode='102' classname='com.testable.whitebox.PiiLogger' start='19' end='21' sourcepath='com/testable/whitebox/PiiLogger.java' sourcefile='PiiLogger.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.PiiLogger.logStudentRecord(String, String, String)</Message></Method><SourceLine endBytecode='11' classname='com.testable.whitebox.PiiLogger' start='19' end='19' sourcepath='com/testable/whitebox/PiiLogger.java' sourcefile='PiiLogger.java' startBytecode='11' primary='true'><Message>At PiiLogger.java:[line 19]</Message></SourceLine><String role='Sink method' value='java/util/logging/Logger.info(Ljava/lang/String;)V'><Message>Sink method java/util/logging/Logger.info(Ljava/lang/String;)V</Message></String><String role='Sink parameter' value='0'><Message>Sink parameter 0</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='d41830a1d30e0d42737efb8cc3e4cd8d' cweid='218' rank='18' abbrev='MS' category='MALICIOUS_CODE' priority='2' type='MS_PKGPROTECT' instanceOccurrenceMax='0'><ShortMessage>Field should be package protected</ShortMessage><LongMessage>com.testable.whitebox.RaceyCounter.GLOBAL_COUNT should be package protected</LongMessage><Class classname='com.testable.whitebox.RaceyCounter' primary='true'><SourceLine classname='com.testable.whitebox.RaceyCounter' start='7' end='16' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java'><Message>At RaceyCounter.java:[lines 7-16]</Message></SourceLine><Message>In class com.testable.whitebox.RaceyCounter</Message></Class><Field isStatic='true' classname='com.testable.whitebox.RaceyCounter' signature='I' name='GLOBAL_COUNT' primary='true'><SourceLine classname='com.testable.whitebox.RaceyCounter' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java'><Message>In RaceyCounter.java</Message></SourceLine><Message>Field com.testable.whitebox.RaceyCounter.GLOBAL_COUNT</Message></Field><SourceLine endBytecode='1' classname='com.testable.whitebox.RaceyCounter' start='9' end='9' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java' startBytecode='1' primary='true'><Message>At RaceyCounter.java:[line 9]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='cd4c9fb4b6f9c07c336c5842ca2710f8' rank='16' abbrev='PA' category='BAD_PRACTICE' priority='2' type='PA_PUBLIC_PRIMITIVE_ATTRIBUTE' instanceOccurrenceMax='0'><ShortMessage>Primitive field is public</ShortMessage><LongMessage>Primitive field com.testable.whitebox.RaceyCounter.GLOBAL_COUNT is public and set from inside the class, which makes it too exposed. Consider making it private to limit external accessibility.</LongMessage><Class classname='com.testable.whitebox.RaceyCounter' primary='true'><SourceLine classname='com.testable.whitebox.RaceyCounter' start='7' end='16' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java'><Message>At RaceyCounter.java:[lines 7-16]</Message></SourceLine><Message>In class com.testable.whitebox.RaceyCounter</Message></Class><Field isStatic='true' classname='com.testable.whitebox.RaceyCounter' signature='I' name='GLOBAL_COUNT' primary='true'><SourceLine classname='com.testable.whitebox.RaceyCounter' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java'><Message>In RaceyCounter.java</Message></SourceLine><Message>Field com.testable.whitebox.RaceyCounter.GLOBAL_COUNT</Message></Field><SourceLine endBytecode='1' classname='com.testable.whitebox.RaceyCounter' start='9' end='9' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java' startBytecode='1' primary='true'><Message>At RaceyCounter.java:[line 9]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='c44152991c3ec674bf0594124568e636' rank='17' abbrev='ST' category='STYLE' priority='2' type='ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD' instanceOccurrenceMax='0'><ShortMessage>Write to static field from instance method</ShortMessage><LongMessage>Write to static field com.testable.whitebox.RaceyCounter.GLOBAL_COUNT from instance method com.testable.whitebox.RaceyCounter.increment()</LongMessage><Class classname='com.testable.whitebox.RaceyCounter' primary='true'><SourceLine classname='com.testable.whitebox.RaceyCounter' start='7' end='16' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java'><Message>At RaceyCounter.java:[lines 7-16]</Message></SourceLine><Message>In class com.testable.whitebox.RaceyCounter</Message></Class><Method isStatic='false' classname='com.testable.whitebox.RaceyCounter' signature='()V' name='increment' primary='true'><SourceLine endBytecode='54' classname='com.testable.whitebox.RaceyCounter' start='12' end='13' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.RaceyCounter.increment()</Message></Method><Field isStatic='true' classname='com.testable.whitebox.RaceyCounter' signature='I' name='GLOBAL_COUNT' primary='true'><SourceLine classname='com.testable.whitebox.RaceyCounter' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java'><Message>In RaceyCounter.java</Message></SourceLine><Message>Field com.testable.whitebox.RaceyCounter.GLOBAL_COUNT</Message></Field><SourceLine endBytecode='5' classname='com.testable.whitebox.RaceyCounter' start='12' end='12' sourcepath='com/testable/whitebox/RaceyCounter.java' sourcefile='RaceyCounter.java' startBytecode='5' primary='true'><Message>At RaceyCounter.java:[line 12]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='ecc75f95593a84757e4c157071557aad' rank='16' abbrev='CT' category='BAD_PRACTICE' priority='2' type='CT_CONSTRUCTOR_THROW' instanceOccurrenceMax='0'><ShortMessage>Be wary of letting constructors throw exceptions.</ShortMessage><LongMessage>Exception thrown in class com.testable.whitebox.SampleApiServer at new com.testable.whitebox.SampleApiServer(int) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</LongMessage><Class classname='com.testable.whitebox.SampleApiServer' primary='true'><SourceLine classname='com.testable.whitebox.SampleApiServer' start='24' end='110' sourcepath='com/testable/whitebox/SampleApiServer.java' sourcefile='SampleApiServer.java'><Message>At SampleApiServer.java:[lines 24-110]</Message></SourceLine><Message>In class com.testable.whitebox.SampleApiServer</Message></Class><Method isStatic='false' classname='com.testable.whitebox.SampleApiServer' signature='(I)V' name='&lt;init&gt;' primary='true'><SourceLine endBytecode='214' classname='com.testable.whitebox.SampleApiServer' start='24' end='33' sourcepath='com/testable/whitebox/SampleApiServer.java' sourcefile='SampleApiServer.java' startBytecode='0'></SourceLine><Message>In method new com.testable.whitebox.SampleApiServer(int)</Message></Method><SourceLine endBytecode='14' classname='com.testable.whitebox.SampleApiServer' start='25' end='25' sourcepath='com/testable/whitebox/SampleApiServer.java' sourcefile='SampleApiServer.java' startBytecode='14' primary='true'><Message>At SampleApiServer.java:[line 25]</Message></SourceLine><SourceLine endBytecode='14' classname='com.testable.whitebox.SampleApiServer' start='25' end='25' sourcepath='com/testable/whitebox/SampleApiServer.java' sourcefile='SampleApiServer.java' startBytecode='14'><Message>At SampleApiServer.java:[line 25]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='7cbc694f69b66b316e5d2bceb3512742' cweid='563' rank='17' abbrev='DLS' category='STYLE' priority='2' type='DLS_DEAD_LOCAL_STORE' instanceOccurrenceMax='0'><ShortMessage>Dead store to local variable</ShortMessage><LongMessage>Dead store to unused in com.testable.whitebox.Utils.badStyleAggregated(int, int)</LongMessage><Class classname='com.testable.whitebox.Utils' primary='true'><SourceLine classname='com.testable.whitebox.Utils' start='7' end='80' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java'><Message>At Utils.java:[lines 7-80]</Message></SourceLine><Message>In class com.testable.whitebox.Utils</Message></Class><Method isStatic='false' classname='com.testable.whitebox.Utils' signature='(II)I' name='badStyleAggregated' primary='true'><SourceLine endBytecode='13' classname='com.testable.whitebox.Utils' start='34' end='37' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.Utils.badStyleAggregated(int, int)</Message></Method><LocalVariable role='LOCAL_VARIABLE_NAMED' pc='15' name='unused' register='5'><Message>Local variable named unused</Message></LocalVariable><SourceLine endBytecode='13' classname='com.testable.whitebox.Utils' start='36' end='36' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java' startBytecode='13' primary='true'><Message>At Utils.java:[line 36]</Message></SourceLine><Property name='edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE' value='true'></Property><Property name='edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME' value='unused'></Property><Property name='edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS' value='true'></Property></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='de83d5b45f83d79f64145b30dec23808' cweid='563' rank='17' abbrev='DLS' category='STYLE' priority='2' type='DLS_DEAD_LOCAL_STORE' instanceOccurrenceMax='0'><ShortMessage>Dead store to local variable</ShortMessage><LongMessage>Dead store to another in com.testable.whitebox.Utils.unusedVarsExample()</LongMessage><Class classname='com.testable.whitebox.Utils' primary='true'><SourceLine classname='com.testable.whitebox.Utils' start='7' end='80' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java'><Message>At Utils.java:[lines 7-80]</Message></SourceLine><Message>In class com.testable.whitebox.Utils</Message></Class><Method isStatic='false' classname='com.testable.whitebox.Utils' signature='()I' name='unusedVarsExample' primary='true'><SourceLine endBytecode='20' classname='com.testable.whitebox.Utils' start='19' end='22' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.Utils.unusedVarsExample()</Message></Method><LocalVariable role='LOCAL_VARIABLE_NAMED' pc='22' name='another' register='3'><Message>Local variable named another</Message></LocalVariable><SourceLine endBytecode='21' classname='com.testable.whitebox.Utils' start='21' end='21' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java' startBytecode='21' primary='true'><Message>At Utils.java:[line 21]</Message></SourceLine><Property name='edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME' value='another'></Property><Property name='edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS' value='true'></Property></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='af8b4cca2dda704b16d74c53e793b358' rank='17' abbrev='UC' category='STYLE' priority='2' type='UC_USELESS_OBJECT' instanceOccurrenceMax='0'><ShortMessage>Useless object created</ShortMessage><LongMessage>Useless object stored in variable another of method com.testable.whitebox.Utils.unusedVarsExample()</LongMessage><Class classname='com.testable.whitebox.Utils' primary='true'><SourceLine classname='com.testable.whitebox.Utils' start='7' end='80' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java'><Message>At Utils.java:[lines 7-80]</Message></SourceLine><Message>In class com.testable.whitebox.Utils</Message></Class><Method isStatic='false' classname='com.testable.whitebox.Utils' signature='()I' name='unusedVarsExample' primary='true'><SourceLine endBytecode='107' classname='com.testable.whitebox.Utils' start='19' end='22' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java' startBytecode='0'></SourceLine><Message>In method com.testable.whitebox.Utils.unusedVarsExample()</Message></Method><String value='another'><Message>Value another</Message></String><Type descriptor='[I'><Message>Type int[]</Message></Type><SourceLine endBytecode='7' classname='com.testable.whitebox.Utils' start='21' end='21' sourcepath='com/testable/whitebox/Utils.java' sourcefile='Utils.java' startBytecode='7' primary='true'><Message>At Utils.java:[line 21]</Message></SourceLine></BugInstance><BugCategory category='BAD_PRACTICE'><Description>Bad practice</Description></BugCategory><BugCategory category='MALICIOUS_CODE'><Description>Malicious code vulnerability</Description></BugCategory><BugCategory category='SECURITY'><Description>Security</Description></BugCategory><BugCategory category='STYLE'><Description>Dodgy code</Description></BugCategory><BugCategory category='I18N'><Description>Internationalization</Description></BugCategory><BugPattern cweid='89' abbrev='SECSQLIJDBC' category='SECURITY' type='SQL_INJECTION_JDBC'><ShortDescription>Potential JDBC Injection</ShortDescription><Details>
+            
+&lt;p&gt;
+The input values included in SQL queries need to be passed in safely.
+Bind variables in prepared statements can be used to easily mitigate the risk of SQL injection.
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;Connection conn = [...];
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("update COFFEES set SALES = "+nbSales+" where COF_NAME = '"+coffeeName+"'");&lt;/pre&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;b&gt;Solution:&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;Connection conn = [...];
+conn.prepareStatement("update COFFEES set SALES = ? where COF_NAME = ?");
+updateSales.setInt(1, nbSales);
+updateSales.setString(2, coffeeName);&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+
+&lt;b&gt;References (JDBC)&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html"&gt;Oracle Documentation: The Java Tutorials &amp;gt; Prepared Statements&lt;/a&gt;&lt;br/&gt;
+&lt;b&gt;References (SQL injection)&lt;/b&gt;&lt;br/&gt;
+&lt;a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection"&gt;WASC-19: SQL Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://capec.mitre.org/data/definitions/66.html"&gt;CAPEC-66: SQL Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/89.html"&gt;CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection"&gt;OWASP: Top 10 2013-A1-Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet"&gt;OWASP: SQL Injection Prevention Cheat Sheet&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet"&gt;OWASP: Query Parameterization Cheat Sheet&lt;/a&gt;&lt;br/&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern abbrev='PA' category='BAD_PRACTICE' type='PA_PUBLIC_PRIMITIVE_ATTRIBUTE'><ShortDescription>Primitive field is public</ShortDescription><Details>
+      
+    &lt;p&gt;
+    &lt;a href="https://wiki.sei.cmu.edu/confluence/display/java/OBJ01-J.+Limit+accessibility+of+fields"&gt;SEI CERT rule OBJ01-J&lt;/a&gt; requires that accessibility to fields must be limited.
+    Otherwise, the values of the fields may be manipulated from outside the class, which may be unexpected or
+    undesired behaviour.
+    In general, requiring that no fields are allowed to be public is overkill and unrealistic. Even
+    the rule mentions that final fields may be public. Besides final fields, there may be other
+    usages for public fields: some public fields may serve as "flags" that affect the behavior of
+    the class. Such flag fields are expected to be read by the current instance (or the current
+    class, in case of static fields), but written by others. If a field is both written by the
+    methods of the current instance (or the current class, in case of static fields) and from the
+    outside, the code is suspicious. Consider making these fields private and provide appropriate
+    setters, if necessary. Please note that constructors, initializers and finalizers are
+    exceptions, if only they write the field inside the class, the field is not considered as
+    written by the class itself.&lt;/p&gt;
+    
+    </Details></BugPattern><BugPattern abbrev='DLS' category='STYLE' type='DLS_DEAD_LOCAL_STORE'><ShortDescription>Dead store to local variable</ShortDescription><Details>
+
+&lt;p&gt;
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+&lt;/p&gt;
+&lt;p&gt;
+Note that Sun's javac compiler often generates dead stores for
+final local variables. Because SpotBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+&lt;/p&gt;
+
+    </Details></BugPattern><BugPattern abbrev='NP' category='STYLE' type='NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE'><ShortDescription>Possible null pointer dereference due to return value of called method</ShortDescription><Details>
+      
+&lt;p&gt; The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a &lt;code&gt;NullPointerException&lt;/code&gt; when the code is executed.
+&lt;/p&gt;
+      
+   </Details></BugPattern><BugPattern abbrev='UC' category='STYLE' type='UC_USELESS_OBJECT'><ShortDescription>Useless object created</ShortDescription><Details>
+
+&lt;p&gt;Our analysis shows that this object is useless.
+It's created and modified, but its value never go outside of the method or produce any side-effect.
+Either there is a mistake and object was intended to be used or it can be removed.&lt;/p&gt;
+&lt;p&gt;This analysis rarely produces false-positives. Common false-positive cases include:&lt;/p&gt;
+&lt;p&gt;- This object used to implicitly throw some obscure exception.&lt;/p&gt;
+&lt;p&gt;- This object used as a stub to generalize the code.&lt;/p&gt;
+&lt;p&gt;- This object used to hold strong references to weak/soft-referenced objects.&lt;/p&gt;
+
+    </Details></BugPattern><BugPattern cweid='502' abbrev='SECOBDES' category='SECURITY' type='OBJECT_DESERIALIZATION'><ShortDescription>Object deserialization is used in {1}</ShortDescription><Details>
+            
+&lt;p&gt;
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+&lt;/p&gt;
+&lt;p&gt;
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service&lt;sup&gt;[1]&lt;/sup&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine&lt;sup&gt;[2] [3]&lt;/sup&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Code at risk:&lt;/b&gt;&lt;br/&gt;
+&lt;pre&gt;
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Solutions:&lt;/b&gt;&lt;br/&gt;
+&lt;p&gt;
+Avoid deserializing object provided by remote users.
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/502.html"&gt;CWE-502: Deserialization of Untrusted Data&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data"&gt;Deserialization of untrusted data&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8"&gt;Serialization and Deserialization &lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://github.com/frohoff/ysoserial"&gt;A tool for generating payloads that exploit unsafe Java object deserialization&lt;/a&gt;&lt;br/&gt;
+[1] &lt;a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d"&gt;Example of Denial of Service using the class &lt;code&gt;java.util.HashSet&lt;/code&gt;&lt;/a&gt;&lt;br/&gt;
+[2] &lt;a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590"&gt;OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)&lt;/a&gt;&lt;br/&gt;
+[3] &lt;a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize"&gt;Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern cweid='396' abbrev='REC' category='STYLE' type='REC_CATCH_EXCEPTION'><ShortDescription>Exception is caught when Exception is not thrown</ShortDescription><Details>
+  
+  &lt;p&gt;
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  &lt;/p&gt;
+  &lt;p&gt;A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;try {
+    ...
+} catch (RuntimeException e) {
+    throw e;
+} catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+  
+     </Details></BugPattern><BugPattern cweid='176' abbrev='SECUNI' category='SECURITY' type='IMPROPER_UNICODE'><ShortDescription>Improper handling of Unicode transformations</ShortDescription><Details>
+            
+&lt;p&gt;
+Unexpected behavior in unicode transformations can sometimes lead to bugs, some of them affecting software security.
+A code that applies the uppercase transformation to two strings could mistakenly interpret both strings as being equal.
+&lt;/p&gt;
+
+&lt;p&gt;
+In the code bellow, the string &lt;code&gt;"ADM\u0131N"&lt;/code&gt; would cause the condition to be true.
+When the uppercase transformation is applied, the character `\u0131` will become '\u0049' (I).
+It can be an issue if the developer only one user to be &lt;code&gt;"ADMIN"&lt;/code&gt;.&lt;br/&gt;
+&lt;pre&gt;
+if(username.toUpperCase().equals("ADMIN")) {
+  //...
+}
+&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Similar characters transformations can occurs with normalization functions.
+In the code bellow, the string &lt;code&gt;"BAC\u212AUP"&lt;/code&gt; would cause the condition to be true.
+When the normalization transformation is applied, the character `\u212A` will become '\u004B' (K).&lt;br/&gt;
+&lt;pre&gt;
+if(Normalizer.normalize(input, Normalizer.Form.NFC).equals("BACKUP")) {
+  //...
+}
+&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://www.gosecure.net/blog/2020/08/04/unicode-for-security-professionals/"&gt;Unicode for Security Professionals&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://websec.github.io/unicode-security-guide/character-transformations/"&gt;Unicode Security Guide: Character Transformations&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/176.html"&gt;CWE-176: Improper Handling of Unicode Encoding&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://unicode.org/reports/tr36/"&gt;Unicode: Unicode Security Considerations&lt;/a&gt;&lt;br/&gt;
+&lt;/p&gt;
+
+            
+        </Details></BugPattern><BugPattern cweid='259' abbrev='SECHCP' category='SECURITY' type='HARD_CODE_PASSWORD'><ShortDescription>Hard coded password</ShortDescription><Details>
+            
+&lt;p&gt;
+Passwords should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded keys are reported separately by &lt;i&gt;Hard Coded Key&lt;/i&gt; pattern)
+&lt;/p&gt;
+&lt;p&gt;
+&lt;p&gt;&lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+
+&lt;pre&gt;private String SECRET_PASSWORD = "letMeIn!";
+
+Properties props = new Properties();
+props.put(Context.SECURITY_CREDENTIALS, "p@ssw0rd");&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/259.html"&gt;CWE-259: Use of Hard-coded Password&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern abbrev='MS' category='MALICIOUS_CODE' type='MS_PKGPROTECT'><ShortDescription>Field should be package protected</ShortDescription><Details>
+
+  &lt;p&gt; A mutable static field could be changed by malicious code or
+   by accident.
+   The field could be made package protected to avoid
+   this vulnerability.&lt;/p&gt;
+
+    </Details></BugPattern><BugPattern abbrev='CT' category='BAD_PRACTICE' type='CT_CONSTRUCTOR_THROW'><ShortDescription>Be wary of letting constructors throw exceptions.</ShortDescription><Details>
+      
+            &lt;p&gt;Classes that throw exceptions in their constructors are vulnerable to Finalizer attacks&lt;/p&gt;
+
+            &lt;p&gt;A finalizer attack can be prevented, by declaring the class final, using an empty finalizer declared as final, or by a clever use of a private constructor.&lt;/p&gt;
+
+            &lt;p&gt;See &lt;a href="https://wiki.sei.cmu.edu/confluence/display/java/OBJ11-J.+Be+wary+of+letting+constructors+throw+exceptions"&gt;&lt;code&gt;SEI CERT Rule OBJ-11&lt;/code&gt;&lt;/a&gt;
+            for more information.
+            &lt;/p&gt;
+            
+    </Details></BugPattern><BugPattern abbrev='ST' category='STYLE' type='ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD'><ShortDescription>Write to static field from instance method</ShortDescription><Details>
+
+  &lt;p&gt; This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+&lt;/p&gt;
+
+    </Details></BugPattern><BugPattern cweid='117' abbrev='SECCRLFLOG' category='SECURITY' type='CRLF_INJECTION_LOGS'><ShortDescription>Potential CRLF Injection for logs</ShortDescription><Details>
+            
+&lt;p&gt;
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+&lt;b&gt;Code at risk:&lt;/b&gt;&lt;br/&gt;
+&lt;pre&gt;String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+&lt;/pre&gt;
+
+A malicious user could send the metadata parameter with the value: &lt;code&gt;"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;b&gt;Solution:&lt;/b&gt;&lt;br/&gt;
+&lt;p&gt;
+You can manually sanitize each parameter.
+&lt;pre&gt;
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack &lt;a href="https://logback.qos.ch/manual/layouts.html#replace"&gt;using the &lt;code&gt;replace&lt;/code&gt; function&lt;/a&gt;.
+&lt;pre&gt;
+&amp;lt;pattern&amp;gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&amp;lt;/pattern&amp;gt;
+&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Finally, you can use a logger implementation that replace new line by spaces.
+The project &lt;a href="https://github.com/javabeanz/owasp-security-logging"&gt;OWASP Security Logging&lt;/a&gt; has an implementation for Logback and Log4j.
+&lt;/p&gt;
+
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+    &lt;a href="https://cwe.mitre.org/data/definitions/117.html"&gt;CWE-117: Improper Output Neutralization for Logs&lt;/a&gt;&lt;br/&gt;
+    &lt;a href="https://cwe.mitre.org/data/definitions/93.html"&gt;CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')&lt;/a&gt;&lt;br/&gt;
+    &lt;a href="https://logback.qos.ch/manual/layouts.html#replace"&gt;CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')&lt;/a&gt;&lt;br/&gt;
+    &lt;a href="https://github.com/javabeanz/owasp-security-logging"&gt;OWASP Security Logging&lt;/a&gt;&lt;br/&gt;
+&lt;/p&gt;
+
+
+        </Details></BugPattern><BugPattern cweid='89' abbrev='SQL' category='SECURITY' type='SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE'><ShortDescription>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortDescription><Details>
+
+  &lt;p&gt;The method invokes the execute or addBatch method on an SQL statement with a String that seems
+to be dynamically generated. Consider using
+a prepared statement instead. It is more efficient and less vulnerable to
+SQL injection attacks.
+&lt;/p&gt;
+
+    </Details></BugPattern><BugPattern cweid='78' abbrev='SECCI' category='SECURITY' type='COMMAND_INJECTION'><ShortDescription>Potential Command Injection</ShortDescription><Details>
+            
+&lt;p&gt;The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+&lt;pre&gt;import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);&lt;/pre&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Command_Injection"&gt;OWASP: Command Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection"&gt;OWASP: Top 10 2013-A1-Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/78.html"&gt;CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern cweid='328' abbrev='SECMD5' category='SECURITY' type='WEAK_MESSAGE_DIGEST_MD5'><ShortDescription>MD2, MD4 and MD5 are weak hash functions</ShortDescription><Details>
+            
+&lt;p&gt;The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. &lt;b&gt;PBKDF2&lt;/b&gt; should be used to hash password for example.&lt;/p&gt;
+
+&lt;blockquote&gt;
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2&lt;sup&gt;24.1&lt;/sup&gt;).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2&lt;sup&gt;39&lt;/sup&gt;).[2]"&lt;br/&gt;
+    - &lt;a href="https://en.wikipedia.org/wiki/MD5#Security"&gt;Wikipedia: MD5 - Security&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+    "&lt;b&gt;SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256&lt;/b&gt;:&lt;br/&gt;
+    The use of these hash functions is acceptable for all hash function applications."&lt;br/&gt;
+    - &lt;a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf"&gt;NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."&lt;br/&gt;
+- &lt;a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf"&gt;NIST: Recommendation for Password-Based Key Derivation  p.12&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();&lt;/pre&gt;
+    &lt;br/&gt;
+    &lt;pre&gt;byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;Solution (Using bouncy castle):&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}&lt;/pre&gt;
+    &lt;br/&gt;
+    &lt;b&gt;Solution (Java 8 and later):&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+[1] &lt;a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf"&gt;On Collisions for MD5&lt;/a&gt;: Master Thesis by M.M.J. Stevens&lt;br/&gt;
+[2] &lt;a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf"&gt;Chosen-prefix collisions for MD5 and applications&lt;/a&gt;: Paper written by Marc Stevens&lt;br/&gt;
+&lt;a href="https://en.wikipedia.org/wiki/MD5"&gt;Wikipedia: MD5&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf"&gt;NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf"&gt;NIST: Recommendation for Password-Based Key Derivation&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://stackoverflow.com/q/22580853/89769"&gt;Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/327.html"&gt;CWE-327: Use of a Broken or Risky Cryptographic Algorithm&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern cweid='328' abbrev='SECSHA1' category='SECURITY' type='WEAK_MESSAGE_DIGEST_SHA1'><ShortDescription>SHA-1 is a weak hash function</ShortDescription><Details>
+            
+&lt;p&gt;The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. &lt;b&gt;PBKDF2&lt;/b&gt; should be used to hash password for example.&lt;/p&gt;
+
+&lt;blockquote&gt;
+    "&lt;b&gt;SHA-1 for digital signature generation:&lt;/b&gt;&lt;br/&gt;
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, &lt;u&gt;SHA-1 shall not be used for digital signature generation&lt;/u&gt;.&lt;br/&gt;
+    &lt;b&gt;SHA-1 for digital signature verification:&lt;/b&gt;&lt;br/&gt;
+    For digital signature verification, &lt;u&gt;SHA-1 is allowed for legacy-use&lt;/u&gt;.&lt;br/&gt;
+    [...]&lt;br/&gt;
+    &lt;b&gt;SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256&lt;/b&gt;:&lt;br/&gt;
+    The use of these hash functions is acceptable for all hash function applications."&lt;br/&gt;
+    - &lt;a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf"&gt;NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."&lt;br/&gt;
+- &lt;a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf"&gt;NIST: Recommendation for Password-Based Key Derivation  p.12&lt;/a&gt;
+
+&lt;/blockquote&gt;
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();&lt;/pre&gt;
+    &lt;br/&gt;
+    &lt;pre&gt;byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;Solution (Using bouncy castle):&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}&lt;/pre&gt;
+    &lt;br/&gt;
+    &lt;b&gt;Solution (Java 8 and later):&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know"&gt;Qualys blog: SHA1 Deprecation: What You Need to Know&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html"&gt;Google Online Security Blog: Gradually sunsetting SHA-1&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf"&gt;NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf"&gt;NIST: Recommendation for Password-Based Key Derivation&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://stackoverflow.com/q/22580853/89769"&gt;Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/327.html"&gt;CWE-327: Use of a Broken or Risky Cryptographic Algorithm&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern abbrev='Dm' category='I18N' type='DM_DEFAULT_ENCODING'><ShortDescription>Reliance on default encoding</ShortDescription><Details>
+
+&lt;p&gt; Found a call to a method which will perform a byte to String (or String to byte) conversion,
+and will assume that the default platform encoding is suitable. This will cause the application
+behavior to vary between platforms. Use an alternative API and specify a charset name or Charset
+object explicitly.&lt;/p&gt;
+
+      </Details></BugPattern><BugPattern abbrev='Dm' category='I18N' type='DM_CONVERT_CASE'><ShortDescription>Consider using Locale parameterized version of invoked method</ShortDescription><Details>
+
+  &lt;p&gt; A String is being converted to upper or lowercase, using the platform's default encoding. This may
+      result in improper conversions when used with international characters. Use the &lt;/p&gt;
+      &lt;ul&gt;
+    &lt;li&gt;String.toUpperCase( Locale l )&lt;/li&gt;
+    &lt;li&gt;String.toLowerCase( Locale l )&lt;/li&gt;
+    &lt;/ul&gt;
+      &lt;p&gt;versions instead.&lt;/p&gt;
+
+    </Details></BugPattern><BugCode abbrev='ST'><Description>Misuse of static fields</Description></BugCode><BugCode cweid='476' abbrev='NP'><Description>Null pointer dereference</Description></BugCode><BugCode abbrev='SECMD5'><Description>MD2, MD4 and MD5 are weak hash functions</Description></BugCode><BugCode abbrev='SECCI'><Description>Command Injection</Description></BugCode><BugCode abbrev='SECCRLFLOG'><Description>CRLF Injection for logs</Description></BugCode><BugCode cweid='218' abbrev='MS'><Description>Mutable static field</Description></BugCode><BugCode abbrev='Dm'><Description>Dubious method used</Description></BugCode><BugCode abbrev='SECHCP'><Description>Hard coded password</Description></BugCode><BugCode cweid='563' abbrev='DLS'><Description>Dead local store</Description></BugCode><BugCode abbrev='SECSQLIJDBC'><Description>SQL Injection (JDBC)</Description></BugCode><BugCode abbrev='SECSHA1'><Description>SHA-1 is a weak hash function</Description></BugCode><BugCode abbrev='UC'><Description>Useless code</Description></BugCode><BugCode abbrev='SQL'><Description>Potential SQL Problem</Description></BugCode><BugCode abbrev='REC'><Description>RuntimeException capture</Description></BugCode><BugCode abbrev='SECUNI'><Description>Improper handling of Unicode transformations</Description></BugCode><BugCode abbrev='PA'><Description>Public Attribute</Description></BugCode><BugCode abbrev='CT'><Description>Constructor throws</Description></BugCode><BugCode abbrev='SECOBDES'><Description>Object deserialization is used</Description></BugCode><Errors missingClasses='2' errors='0'><MissingClass>handle</MissingClass><MissingClass>makeConcatWithConstants</MissingClass></Errors><FindBugsSummary num_packages='1' total_classes='0' priority_1='4' priority_2='15' priority_3='6' total_size='0' clock_seconds='11.34' referenced_classes='0' vm_version='17.0.12+8-LTS-286' total_bugs='25' java_version='17.0.12' gc_seconds='0.07' alloc_mbytes='512.00' cpu_seconds='36.83' peak_mbytes='259.18' timestamp='Mon, 10 Aug 2026 14:59:31 +0530'><FileStats path='com/testable/whitebox/AuthService.java' size='0' bugHash='c14383ff355f637537a19fced52f8900' bugCount='11'></FileStats><FileStats path='com/testable/whitebox/Calculator.java' size='0' bugHash='8dc0a8d4c6f16bbcd8c35bacfbf92276' bugCount='3'></FileStats><FileStats path='com/testable/whitebox/DataProcessor.java' size='0' bugHash='1471de251125d6e1a47844429525df40' bugCount='1'></FileStats><FileStats path='com/testable/whitebox/FileHandler.java' size='0' bugHash='74c077ff284ce94660da850f0f1e6e63' bugCount='1'></FileStats><FileStats path='com/testable/whitebox/PerformanceHotspots.java' size='0' bugHash='93fb9381afd3696b1b5328ac879c6bea' bugCount='1'></FileStats><FileStats path='com/testable/whitebox/PiiLogger.java' size='0' bugHash='b200fd48b7810ed2e393efbc9870d62a' bugCount='1'></FileStats><FileStats path='com/testable/whitebox/RaceyCounter.java' size='0' bugHash='dbbb71d223559be668a6cd28c76b0478' bugCount='3'></FileStats><FileStats path='com/testable/whitebox/SampleApiServer.java' size='0' bugHash='af28700fbef57de836c3c96c9c523b75' bugCount='1'></FileStats><FileStats path='com/testable/whitebox/Utils.java' size='0' bugHash='8c2e5815ae1dbead77b3f77348e4e298' bugCount='3'></FileStats><FindBugsProfile></FindBugsProfile></FindBugsSummary><ClassFeatures></ClassFeatures><History></History></BugCollection>

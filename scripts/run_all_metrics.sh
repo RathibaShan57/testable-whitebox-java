@@ -45,6 +45,7 @@ if [[ "${SKIP_DEPENDENCY_CHECK:-0}" != "1" ]]; then
 fi
 if [[ "${SKIP_PIT:-0}" != "1" ]]; then
   run "PIT" mvn -q org.pitest:pitest-maven:mutationCoverage
+  [[ -d target/pit-reports ]] && cp -R target/pit-reports/* "$REPORTS/pit/" || true
 fi
 
 run "Git churn" bash -c "

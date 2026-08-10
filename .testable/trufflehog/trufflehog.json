@@ -1,0 +1,26 @@
+[
+  {
+    "SourceMetadata": {
+      "Data": {
+        "Filesystem": {
+          "file": "src/main/java/com/testable/whitebox/AuthService.java",
+          "line": 23
+        }
+      }
+    },
+    "SourceID": 1,
+    "SourceType": 15,
+    "SourceName": "filesystem",
+    "DetectorType": 391,
+    "DetectorName": "Generic",
+    "DecoderName": "PLAIN",
+    "Verified": false,
+    "Raw": "sk-prod-hardcoded-key-abc123",
+    "Redacted": "sk-prod-**************abc123",
+    "ExtraData": {
+      "field_name": "SECRET_API_KEY",
+      "resource_type": "Generic API Key"
+    },
+    "StructuredData": null
+  }
+]

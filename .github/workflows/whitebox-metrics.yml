@@ -102,7 +102,9 @@ jobs:
         run: python scripts/run_presidio.py --input fixtures/pii --output reports/presidio/presidio.json || true
 
       - name: PIT mutation testing
-        run: mvn -B -q org.pitest:pitest-maven:mutationCoverage
+        run: |
+          mvn -B -q org.pitest:pitest-maven:mutationCoverage
+          cp -R target/pit-reports/* reports/pit/ || true
 
       - name: Git churn
         run: |

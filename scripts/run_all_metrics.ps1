@@ -120,6 +120,9 @@ if (-not $SkipDependencyCheck) {
 if (-not $SkipPit) {
     Invoke-MetricTool 'PIT mutation testing' {
         mvn -q org.pitest:pitest-maven:mutationCoverage
+        if (Test-Path "target\pit-reports") {
+            Copy-Item -Recurse -Force "target\pit-reports\*" (Join-Path $ReportsDir "pit\")
+        }
     }
 } else {
     Write-Host ""

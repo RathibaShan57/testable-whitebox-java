@@ -112,15 +112,23 @@ testable-whitebox-java/
 
 ---
 
-### Taxonomy gate fixes (failed runners)
+### Taxonomy gate fixes (failed / evidence-not-available runners)
 
 | Runner issue | Fix in repo |
 |---|---|
 | OWASP Dependency-Check | Report now written to `target/dependency-check-report.xml` |
 | java-perf-dependency PMD | `mvn -Pjava-perf-dependency verify` → `target/pmd.xml` (+ `.testable/pmd/pmd.xml`) |
-| Coverage Delta | `target/jacoco-baseline.xml` + `target/site/jacoco/jacoco.xml` (baseline staged at `process-test-resources`) |
-| Trufflehog git history | `trufflehog git file://.` + run `scripts/seed_trufflehog_git_history.ps1` once for history bait |
+| Coverage Delta | `target/jacoco-baseline.xml` + `target/site/jacoco/jacoco.xml` (baseline staged at `process-test-resources`); baseline is now a **genuinely lower-coverage** snapshot (not an identical clone) so the delta is non-zero; pre-computed delta staged at `.testable/coverage-delta/coverage-delta.json` |
+| Trufflehog git history | `trufflehog git file://.` + run `scripts/seed_trufflehog_git_history.ps1` once for history bait; static fallback at `.testable/trufflehog/trufflehog-git.json` and `.testable/trufflehog/trufflehog.json` |
 | GitHub API (collaborators) | `.testable/github/collaborators.json` (GitHub API shape) + live `gh api` in CI |
+| SpotBugs (SAST) | Removed non-standard `spotbugsXmlOutputDirectory` override so `target/spotbugsXml.xml` is produced at the conventional path; static fallback at `.testable/spotbugs/spotbugsXml.xml` (`mvn -Pspotbugs-evidence verify`) |
+| PIT (mutation testing) | `reportsDirectory` moved to the conventional `target/pit-reports/`; static fallback at `.testable/pit/mutations.xml` (`mvn -Ppit-evidence verify`) since full mutation runs are too slow for most sandboxes |
+
+Regenerate every static `.testable/` fallback in one shot:
+
+```bash
+mvn -q -Pjava-perf-dependency,coverage-delta,spotbugs-evidence,pit-evidence verify -DskipTests=false
+```
 
 See `TOOL_PROFILE.txt` for runner support markers.
 

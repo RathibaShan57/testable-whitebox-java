@@ -34,6 +34,10 @@ def main() -> int:
     baseline = next((p for p in baseline_candidates if p.is_file()), None)
     out_dir = root / "reports" / "coverage-delta"
     out_dir.mkdir(parents=True, exist_ok=True)
+    # .testable/ is NOT gitignored — commit the computed delta here so a worker that
+    # only reads static evidence (no live `mvn test` run) still finds a real result.
+    testable_dir = root / ".testable" / "coverage-delta"
+    testable_dir.mkdir(parents=True, exist_ok=True)
 
     if not current.is_file():
         print(f"Missing current JaCoCo report: {current}", file=sys.stderr)
@@ -71,6 +75,7 @@ def main() -> int:
         "metrics": metrics,
     }
     (out_dir / "coverage-delta.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    (testable_dir / "coverage-delta.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(json.dumps(summary, indent=2))
     return 0
 

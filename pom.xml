@@ -175,7 +175,8 @@
                 </configuration>
             </plugin>
 
-            <!-- SpotBugs — SAST -->
+            <!-- SpotBugs — SAST. Taxonomy gate expects target/spotbugsXml.xml (standard
+                 Maven convention); do NOT redirect xmlOutputDirectory away from target/. -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
@@ -186,7 +187,6 @@
                     <threshold>Low</threshold>
                     <xmlOutput>true</xmlOutput>
                     <htmlOutput>true</htmlOutput>
-                    <spotbugsXmlOutputDirectory>${reports.dir}/spotbugs</spotbugsXmlOutputDirectory>
                     <plugins>
                         <plugin>
                             <groupId>com.h3xstream.findsecbugs</groupId>
@@ -238,7 +238,8 @@
                         <outputFormat>XML</outputFormat>
                         <outputFormat>HTML</outputFormat>
                     </outputFormats>
-                    <reportsDirectory>${reports.dir}/pit</reportsDirectory>
+                    <!-- Taxonomy gate expects target/pit-reports/mutations.xml (standard location) -->
+                    <reportsDirectory>${project.build.directory}/pit-reports</reportsDirectory>
                     <timestampedReports>false</timestampedReports>
                     <threads>1</threads>
                     <timeoutConstant>4000</timeoutConstant>
@@ -398,6 +399,121 @@
                                         <copy file="${project.basedir}/baselines/jacoco-baseline.xml"
                                               tofile="${project.build.directory}/jacoco-baseline.xml"
                                               failonerror="true"/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                            <!-- Mirror the CURRENT run's JaCoCo XML too, so a worker that only
+                                 reads .testable/ (no live `mvn test`) has both sides of the delta. -->
+                            <execution>
+                                <id>mirror-jacoco-current-testable</id>
+                                <phase>verify</phase>
+                                <goals><goal>run</goal></goals>
+                                <configuration>
+                                    <target>
+                                        <mkdir dir="${project.basedir}/.testable/jacoco"/>
+                                        <copy file="${project.build.directory}/site/jacoco/jacoco.xml"
+                                              tofile="${project.basedir}/.testable/jacoco/jacoco-current.xml"
+                                              failonerror="false"/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Pre-compute the delta JSON itself and stage it as static evidence -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.5.0</version>
+                        <executions>
+                            <execution>
+                                <id>compute-coverage-delta-testable</id>
+                                <phase>verify</phase>
+                                <goals><goal>exec</goal></goals>
+                                <configuration>
+                                    <executable>python</executable>
+                                    <arguments>
+                                        <argument>${project.basedir}/scripts/run_coverage_delta.py</argument>
+                                    </arguments>
+                                    <failOnError>false</failOnError>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Taxonomy gate: SpotBugs SAST — stage static evidence in .testable/ in case the
+             worker's own SpotBugs/FindSecBugs invocation cannot resolve the plugin jars. -->
+        <profile>
+            <id>spotbugs-evidence</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>spotbugs-for-gate</id>
+                                <phase>verify</phase>
+                                <goals><goal>spotbugs</goal></goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>stage-spotbugs-for-gate</id>
+                                <phase>verify</phase>
+                                <goals><goal>run</goal></goals>
+                                <configuration>
+                                    <target>
+                                        <mkdir dir="${project.basedir}/.testable/spotbugs"/>
+                                        <copy file="${project.build.directory}/spotbugsXml.xml"
+                                              tofile="${project.basedir}/.testable/spotbugs/spotbugsXml.xml"
+                                              failonerror="false"/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Taxonomy gate: PIT mutation testing — stage static evidence in .testable/ since
+             full mutation runs are too slow for most worker sandboxes to execute live. -->
+        <profile>
+            <id>pit-evidence</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-maven</artifactId>
+                        <executions>
+                            <execution>
+                                <id>pit-for-gate</id>
+                                <phase>verify</phase>
+                                <goals><goal>mutationCoverage</goal></goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>stage-pit-for-gate</id>
+                                <phase>verify</phase>
+                                <goals><goal>run</goal></goals>
+                                <configuration>
+                                    <target>
+                                        <mkdir dir="${project.basedir}/.testable/pit"/>
+                                        <copy file="${project.build.directory}/pit-reports/mutations.xml"
+                                              tofile="${project.basedir}/.testable/pit/mutations.xml"
+                                              failonerror="false"/>
                                     </target>
                                 </configuration>
                             </execution>

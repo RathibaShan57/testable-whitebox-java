@@ -1,0 +1,28 @@
+{
+  "current_report": "C:/Users/Rathiba/Source/Java/testable-whitebox-java/target/site/jacoco/jacoco.xml",
+  "baseline_report": "C:/Users/Rathiba/Source/Java/testable-whitebox-java/target/jacoco-baseline.xml",
+  "line_delta_percent": 33.6,
+  "branch_delta_percent": 23.53,
+  "metrics": {
+    "INSTRUCTION": {
+      "current_percent": 83.27,
+      "baseline_percent": 43.77,
+      "delta_percent": 39.5
+    },
+    "LINE": {
+      "current_percent": 83.5,
+      "baseline_percent": 49.9,
+      "delta_percent": 33.6
+    },
+    "BRANCH": {
+      "current_percent": 70.96,
+      "baseline_percent": 47.43,
+      "delta_percent": 23.53
+    },
+    "METHOD": {
+      "current_percent": 86.21,
+      "baseline_percent": 64.37,
+      "delta_percent": 21.84
+    }
+  }
+}

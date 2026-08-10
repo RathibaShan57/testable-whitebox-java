@@ -1,5 +1,11 @@
 OWASP Dependency-Check SUPPORT — report at target/dependency-check-report.xml
-java-perf-dependency SUPPORT — mvn -Pjava-perf-dependency verify writes target/pmd.xml
-coverage delta SUPPORT — target/jacoco-baseline.xml + target/site/jacoco/jacoco.xml
-trufflehog SUPPORT — trufflehog filesystem . and trufflehog git file://.
-github api / gitlab api SUPPORT — .testable/github/collaborators.json GitHub API fallback
+java-perf-dependency SUPPORT — mvn -Pjava-perf-dependency verify writes target/pmd.xml (static fallback: .testable/pmd/pmd.xml)
+coverage delta SUPPORT — target/jacoco-baseline.xml + target/site/jacoco/jacoco.xml (static fallback: .testable/jacoco/jacoco-baseline.xml, .testable/jacoco/jacoco-current.xml, .testable/coverage-delta/coverage-delta.json)
+trufflehog SUPPORT — trufflehog filesystem . and trufflehog git file://. (static fallback: .testable/trufflehog/trufflehog.json, .testable/trufflehog/trufflehog-git.json)
+github api / gitlab api SUPPORT — .testable/github/collaborators.json GitHub API fallback (also .testable/github/branch-protection.json, .testable/github/repository.json)
+spotbugs SUPPORT — mvn -Pspotbugs-evidence verify writes target/spotbugsXml.xml (static fallback: .testable/spotbugs/spotbugsXml.xml)
+pit SUPPORT — mvn -Ppit-evidence verify writes target/pit-reports/mutations.xml (static fallback: .testable/pit/mutations.xml)
+
+Regenerate all static fallbacks locally with:
+  mvn -Pjava-perf-dependency,coverage-delta,spotbugs-evidence,pit-evidence verify -DskipTests=false
+then commit the refreshed files under .testable/ (never gitignored — see .gitignore).

@@ -1,0 +1,88 @@
+[
+  {
+    "SourceMetadata": {
+      "Data": {
+        "Git": {
+          "commit": "e66770b5b0b73f4f8e9a5229a64bf81134abd913",
+          "file": "fixtures/secrets/historical-credential.txt",
+          "email": "Rathiba Shan <rathiba@testable.com>",
+          "repository": "https://github.com/RathibaShan57/testable-whitebox-java.git",
+          "timestamp": "2026-08-10T13:11:43+05:30",
+          "line": 3
+        }
+      }
+    },
+    "SourceID": 1,
+    "SourceType": 16,
+    "SourceName": "git",
+    "DetectorType": 2,
+    "DetectorName": "AWS",
+    "DecoderName": "PLAIN",
+    "Verified": false,
+    "Raw": "AKIA_HISTORICAL_BAIT_DO_NOT_USE",
+    "Redacted": "AKIA************************BAIT",
+    "ExtraData": {
+      "account": "unknown",
+      "rotation_guide": "https://howtorotate.com/docs/tutorials/aws/",
+      "resource_type": "Access Key"
+    },
+    "StructuredData": null
+  },
+  {
+    "SourceMetadata": {
+      "Data": {
+        "Git": {
+          "commit": "e66770b5b0b73f4f8e9a5229a64bf81134abd913",
+          "file": "fixtures/secrets/historical-credential.txt",
+          "email": "Rathiba Shan <rathiba@testable.com>",
+          "repository": "https://github.com/RathibaShan57/testable-whitebox-java.git",
+          "timestamp": "2026-08-10T13:11:43+05:30",
+          "line": 4
+        }
+      }
+    },
+    "SourceID": 1,
+    "SourceType": 16,
+    "SourceName": "git",
+    "DetectorType": 2,
+    "DetectorName": "AWS",
+    "DecoderName": "PLAIN",
+    "Verified": false,
+    "Raw": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+    "Redacted": "wJalrXUtnFEMI/K7MDENG/**********MPLEKEY",
+    "ExtraData": {
+      "account": "unknown",
+      "rotation_guide": "https://howtorotate.com/docs/tutorials/aws/",
+      "resource_type": "Secret Key"
+    },
+    "StructuredData": null
+  },
+  {
+    "SourceMetadata": {
+      "Data": {
+        "Git": {
+          "commit": "997ad4304aaf37f3f34362bde1cd7c66c02b259d",
+          "file": "fixtures/secrets/historical-credential.txt",
+          "email": "Rathiba Shan <rathiba@testable.com>",
+          "repository": "https://github.com/RathibaShan57/testable-whitebox-java.git",
+          "timestamp": "2026-08-10T13:12:10+05:30",
+          "line": 0
+        }
+      }
+    },
+    "SourceID": 1,
+    "SourceType": 16,
+    "SourceName": "git",
+    "DetectorType": 2,
+    "DetectorName": "AWS",
+    "DecoderName": "PLAIN",
+    "Verified": false,
+    "Raw": "AKIA_HISTORICAL_BAIT_DO_NOT_USE",
+    "Redacted": "AKIA************************BAIT",
+    "ExtraData": {
+      "note": "Credential removed from HEAD in this commit but remains reachable via git history — demonstrates 'Secrets in Git History' detection.",
+      "resource_type": "Access Key (deleted from working tree)"
+    },
+    "StructuredData": null
+  }
+]
