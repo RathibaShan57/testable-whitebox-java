@@ -1,0 +1,91 @@
+{
+  "info": {
+    "name": "Testable Sample API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Black Box / Security URL / Compliance URL — Newman/Postman triggers"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/health"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('status 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('ok body', function () { pm.expect(pm.response.json().status).to.eql('ok'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders without auth",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/orders"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('orders reachable', function () { pm.response.to.have.status(200); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Students PII exposure",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/students"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('students returns body', function () { pm.response.to.have.status(200); });",
+              "pm.test('contains email field', function () { pm.expect(pm.response.text()).to.include('email'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Login always succeeds",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"user\":\"anyone\",\"password\":\"x\"}"
+        },
+        "url": "{{baseUrl}}/api/login"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('login 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('returns token', function () { pm.expect(pm.response.json().token).to.be.ok; });"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://127.0.0.1:8089" }
+  ]
+}

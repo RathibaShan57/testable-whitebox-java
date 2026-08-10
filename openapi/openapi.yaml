@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: Testable Sample API
+  version: 1.0.0
+  description: OpenAPI contract for Black Box / Security URL tools (Newman, ZAP, 42Crunch proxies)
+servers:
+  - url: http://127.0.0.1:8089
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: OK
+  /api/orders:
+    get:
+      summary: List orders
+      responses:
+        "200":
+          description: OK
+  /api/students:
+    get:
+      summary: List students (intentional PII)
+      responses:
+        "200":
+          description: OK
+  /api/login:
+    post:
+      summary: Weak login
+      responses:
+        "200":
+          description: Always succeeds

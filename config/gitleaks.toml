@@ -1,0 +1,4 @@
+title = "Testable sample gitleaks config"
+
+[extend]
+useDefault = true

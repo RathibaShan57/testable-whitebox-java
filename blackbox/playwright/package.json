@@ -1,0 +1,11 @@
+{
+  "name": "testable-whitebox-playwright",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test smoke.spec.js --reporter=list"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}

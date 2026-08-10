@@ -1,4 +1,4 @@
-name: Java WhiteBox Primary Tools
+name: Java Strategy Metrics (All Sheets)
 
 on:
   push:
@@ -20,19 +20,71 @@ jobs:
           java-version: "17"
           cache: maven
 
-      - name: Unit tests + JaCoCo
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install CLI scanners
+        run: |
+          pip install --quiet lizard semgrep detect-secrets checkov presidio-analyzer
+          curl -sSfL https://raw.githubusercontent.com/gitleaks/gitleaks/master/install.sh | sh -s -- -b /usr/local/bin
+          # k6
+          sudo gpg -k >/dev/null 2>&1 || true
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq gnupg2 >/dev/null
+          curl -s https://dl.k6.io/key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/k6-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq k6
+          npm install -g newman
+
+      - name: Unit tests + JaCoCo + ArchUnit
         run: mvn -B -q test jacoco:report
 
       - name: CK / PMD / CPD / Checkstyle / SpotBugs
         run: |
           mvn -B -q dependency:copy@copy-ck pmd:pmd pmd:cpd checkstyle:checkstyle spotbugs:spotbugs
-          mkdir -p reports/{ck,pmd,cpd,checkstyle,spotbugs,jacoco,git}
+          mkdir -p reports/{ck,pmd,cpd,checkstyle,spotbugs,jacoco,git,lizard,semgrep,gitleaks,trufflehog,detect-secrets,checkov,tfsec,kics,presidio,archunit,github-api,newman,k6,zap,playwright}
           cp -R target/site/jacoco/* reports/jacoco/ || true
-          java -jar target/tools/ck.jar src/main/java true 0 false reports/ck 1 || true
+          java -jar target/tools/ck.jar src/main/java true 0 false reports/ck/ || true
           cp target/pmd.xml reports/pmd/ || true
           cp target/cpd.xml reports/cpd/ || true
           cp target/checkstyle-result.xml reports/checkstyle/ || true
           cp target/spotbugsXml.xml reports/spotbugs/ || true
+          cp -R target/surefire-reports/* reports/archunit/ || true
+
+      - name: Lizard + Semgrep (Performance / Compliance Code)
+        run: |
+          lizard src/main/java -l java -C 15 -o reports/lizard/lizard.txt || true
+          semgrep --config .semgrep/testable-qa.yml --json -o reports/semgrep/semgrep.json src/main/java || true
+
+      - name: Secret scanners (Security / Compliance Code)
+        run: |
+          gitleaks detect --source . --config config/gitleaks.toml --report-path reports/gitleaks/gitleaks.json --report-format json --no-git || true
+          detect-secrets scan --all-files > reports/detect-secrets/baseline.json || true
+          docker run --rm -v "$PWD:/repo" trufflesecurity/trufflehog:latest filesystem /repo --json > reports/trufflehog/trufflehog.json || true
+
+      - name: IaC scanners (Checkov / tfsec / kics)
+        run: |
+          checkov -d infra/terraform -o json --output-file-path reports/checkov --soft-fail || true
+          docker run --rm -v "$PWD:/repo" aquasec/tfsec /repo/infra/terraform --format json > reports/tfsec/tfsec.json || true
+          docker run --rm -v "$PWD:/repo" checkmarx/kics:latest scan -p /repo/infra/terraform -o /repo/reports/kics || true
+
+      - name: Presidio PII scan
+        run: python scripts/run_presidio.py --input fixtures/pii --output reports/presidio/presidio.json || true
+
+      - name: GitHub API (branch protection / collaborators)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "repo=${{ github.repository }}" > reports/github-api/repo.txt
+          gh api "repos/${{ github.repository }}/branches/${{ github.ref_name }}/protection" > reports/github-api/branch-protection.json 2>reports/github-api/branch-protection.err || true
+          gh api "repos/${{ github.repository }}/collaborators" > reports/github-api/collaborators.json 2>reports/github-api/collaborators.err || true
 
       - name: PIT mutation testing
         run: mvn -B -q org.pitest:pitest-maven:mutationCoverage
@@ -46,8 +98,40 @@ jobs:
         run: mvn -B -q org.owasp:dependency-check-maven:check
         continue-on-error: true
 
+      - name: Start SampleApiServer
+        run: |
+          mvn -B -q -DskipTests package
+          java -cp target/classes com.testable.whitebox.SampleApiServer 8089 > reports/api-server.log 2>&1 &
+          echo $! > /tmp/api.pid
+          sleep 2
+          curl -sf http://127.0.0.1:8089/health
+
+      - name: Newman + k6 + Playwright (Black Box / URL)
+        run: |
+          newman run blackbox/postman/testable-sample.postman_collection.json \
+            --env-var baseUrl=http://127.0.0.1:8089 \
+            -r cli,json --reporter-json-export reports/newman/newman.json || true
+          BASE_URL=http://127.0.0.1:8089 k6 run blackbox/k6/load.js --summary-export=reports/k6/summary.json || true
+          (
+            cd blackbox/playwright
+            npm install
+            npx playwright install --with-deps chromium
+            BASE_URL=http://127.0.0.1:8089 npx playwright test --reporter=list
+          ) | tee reports/playwright/playwright.log || true
+
+      - name: OWASP ZAP baseline (Security / Compliance URL)
+        run: |
+          docker run --rm --network host \
+            -v "$PWD/reports/zap:/zap/wrk" \
+            ghcr.io/zaproxy/zaproxy:stable zap-baseline.py \
+            -t http://127.0.0.1:8089 -J zap-report.json -w zap-report.md || true
+
+      - name: Stop SampleApiServer
+        if: always()
+        run: kill "$(cat /tmp/api.pid)" 2>/dev/null || true
+
       - name: Upload reports
         uses: actions/upload-artifact@v4
         with:
-          name: whitebox-reports
+          name: strategy-metrics-reports
           path: reports/

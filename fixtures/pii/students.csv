@@ -1,0 +1,4 @@
+name,ssn,email,student_id,dob
+Jane Doe,123-45-6789,jane.doe@school.edu,STU-1001,2012-04-15
+John Smith,987-65-4321,john.smith@school.edu,STU-1002,2011-09-03
+Alice Example,111-22-3333,alice.example@school.edu,STU-1003,2013-01-22

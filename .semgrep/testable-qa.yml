@@ -1,0 +1,36 @@
+rules:
+  - id: testable-pii-in-logs
+    message: "PII field logged (Compliance Code — PII Log Statement Count)"
+    languages: [java]
+    severity: ERROR
+    patterns:
+      - pattern-either:
+          - pattern: |
+              $LOG.info($X + ...)
+          - pattern: |
+              System.out.println($X + ...)
+      - metavariable-regex:
+          metavariable: $X
+          regex: (?s).*(ssn|SSN|email|PAN|pan|password).*
+
+  - id: testable-nplus1-find-in-loop
+    message: "Potential N+1 query pattern (Performance Code — Semgrep Hibernate Rules)"
+    languages: [java]
+    severity: WARNING
+    pattern: |
+      for ($T $ITEM : $COLLECTION) {
+        ...
+        $REPO.find$ANY(...);
+        ...
+      }
+
+  - id: testable-alloc-in-loop
+    message: "Large allocation inside loop (Performance Code — Memory Allocation Pattern)"
+    languages: [java]
+    severity: WARNING
+    pattern: |
+      for (...; ...; ...) {
+        ...
+        new byte[$SIZE];
+        ...
+      }

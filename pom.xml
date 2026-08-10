@@ -8,11 +8,12 @@
     <artifactId>testable-whitebox-java</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-    <name>Testable WhiteBox Java Sample</name>
+    <name>Testable Metrics Java Sample</name>
     <description>
-        Monolithic Java 17 sample that triggers all White Box Java Primary tools
-        from Testable_Strategy_Metrics_Mapping_v0.2: CK, PMD, CPD, Checkstyle,
-        SpotBugs, OWASP Dependency-Check, JaCoCo, PIT, and Git churn.
+        Monolithic Java 17 sample that triggers Primary tools from
+        Testable_Strategy_Metrics_Mapping_v0.2 across White Box, Black Box,
+        Security/Compliance Code, Performance Code, and URL/API sheets
+        (via SampleApiServer + Newman/k6/ZAP/Playwright).
     </description>
 
     <properties>
@@ -27,7 +28,10 @@
         <pitest.version>1.17.3</pitest.version>
         <pitest.junit5.version>1.2.2</pitest.junit5.version>
         <ck.version>0.7.0</ck.version>
+        <archunit.version>1.3.0</archunit.version>
         <reports.dir>${project.basedir}/reports</reports.dir>
+        <!-- Default empty; JaCoCo prepare-agent appends its agent here -->
+        <argLine></argLine>
     </properties>
 
     <dependencies>
@@ -54,6 +58,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- Performance Code — circular dependency detection -->
+        <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit-junit5</artifactId>
+            <version>${archunit.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -72,7 +83,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
-                    <argLine>@{argLine}</argLine>
+                    <argLine>${argLine}</argLine>
                 </configuration>
             </plugin>
 
@@ -258,6 +269,9 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.5.0</version>
+                <configuration>
+                    <mainClass>com.testable.whitebox.SampleApiServer</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,5 +1,14 @@
 target/
 reports/
+/class.csv
+/method.csv
+/field.csv
+/variable.csv
+/reports/ck*.csv
+ckclass.csv
+ckmethod.csv
+ckfield.csv
+ckvariable.csv
 .idea/
 *.iml
 .classpath
@@ -10,3 +19,10 @@ reports/
 .DS_Store
 dependency-check-data/
 *.exec
+blackbox/playwright/node_modules/
+blackbox/playwright/test-results/
+blackbox/playwright/playwright-report/
+reports_excel_dump.json
+__pycache__/
+*.pyc
+.venv/
