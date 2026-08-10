@@ -1,0 +1,12 @@
+target/
+reports/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+*.log
+.DS_Store
+dependency-check-data/
+*.exec

@@ -1,0 +1,53 @@
+name: Java WhiteBox Primary Tools
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Unit tests + JaCoCo
+        run: mvn -B -q test jacoco:report
+
+      - name: CK / PMD / CPD / Checkstyle / SpotBugs
+        run: |
+          mvn -B -q dependency:copy@copy-ck pmd:pmd pmd:cpd checkstyle:checkstyle spotbugs:spotbugs
+          mkdir -p reports/{ck,pmd,cpd,checkstyle,spotbugs,jacoco,git}
+          cp -R target/site/jacoco/* reports/jacoco/ || true
+          java -jar target/tools/ck.jar src/main/java true 0 false reports/ck 1 || true
+          cp target/pmd.xml reports/pmd/ || true
+          cp target/cpd.xml reports/cpd/ || true
+          cp target/checkstyle-result.xml reports/checkstyle/ || true
+          cp target/spotbugsXml.xml reports/spotbugs/ || true
+
+      - name: PIT mutation testing
+        run: mvn -B -q org.pitest:pitest-maven:mutationCoverage
+
+      - name: Git churn
+        run: |
+          git log --numstat --pretty=format:'COMMIT %h %ad' --date=short -n 50 -- 'src/**/*.java' > reports/git/numstat.txt || true
+          git log --name-only --pretty=format: -n 200 -- 'src/**/*.java' | sed '/^$/d' | sort | uniq -c | sort -nr | head -30 > reports/git/hotspots.txt || true
+
+      - name: OWASP Dependency-Check
+        run: mvn -B -q org.owasp:dependency-check-maven:check
+        continue-on-error: true
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: whitebox-reports
+          path: reports/
