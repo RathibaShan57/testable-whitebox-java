@@ -17,8 +17,10 @@ run() {
 
 have() { command -v "$1" >/dev/null 2>&1; }
 
-run "Maven test + JaCoCo" mvn -q test
-run "JaCoCo report" mvn -q jacoco:report
+run "Maven test + JaCoCo + coverage baseline" mvn -q test jacoco:report verify -Pcoverage-delta
+run "PMD java-perf-dependency" mvn -q -Pjava-perf-dependency pmd:pmd
+[[ -f target/pmd.xml ]] || echo "WARN: target/pmd.xml missing"
+run "Coverage delta" python3 scripts/run_coverage_delta.py
 [[ -d target/site/jacoco ]] && cp -R target/site/jacoco/* "$REPORTS/jacoco/" || true
 
 run "CK" mvn -q dependency:copy@copy-ck
@@ -35,6 +37,11 @@ find target -maxdepth 1 -name 'spotbugs*' -exec cp {} "$REPORTS/spotbugs/" \; 2>
 
 if [[ "${SKIP_DEPENDENCY_CHECK:-0}" != "1" ]]; then
   run "OWASP Dependency-Check" mvn -q org.owasp:dependency-check-maven:check
+  if [[ -f target/dependency-check-report.xml ]]; then
+    cp target/dependency-check-report.* "$REPORTS/dependency-check/" || true
+  else
+    echo "WARN: target/dependency-check-report.xml missing"
+  fi
 fi
 if [[ "${SKIP_PIT:-0}" != "1" ]]; then
   run "PIT" mvn -q org.pitest:pitest-maven:mutationCoverage
@@ -80,9 +87,11 @@ elif have python3; then
 fi
 
 if have trufflehog; then
-  run "Trufflehog" bash -c "trufflehog filesystem . --json > '$REPORTS/trufflehog/trufflehog.json' 2>'$REPORTS/trufflehog/trufflehog.log'"
+  run "Trufflehog filesystem" bash -c "trufflehog filesystem . --json > '$REPORTS/trufflehog/trufflehog.json' 2>'$REPORTS/trufflehog/trufflehog.log'"
+  run "Trufflehog git history" bash -c "trufflehog git file://. --json > '$REPORTS/trufflehog/trufflehog-git.json' 2>'$REPORTS/trufflehog/trufflehog-git.log'"
 elif have docker; then
   run "Trufflehog(docker)" bash -c "docker run --rm -v '$ROOT:/repo' trufflesecurity/trufflehog:latest filesystem /repo --json > '$REPORTS/trufflehog/trufflehog.json'"
+  run "Trufflehog git(docker)" bash -c "docker run --rm -v '$ROOT:/repo' trufflesecurity/trufflehog:latest git file:///repo --json > '$REPORTS/trufflehog/trufflehog-git.json'"
 fi
 
 if have checkov; then
@@ -117,6 +126,8 @@ if have gh; then
     echo "repo=$REPO" > "$REPORTS/github-api/repo.txt"
     gh api "repos/$REPO/branches/master/protection" > "$REPORTS/github-api/branch-protection.json" 2>"$REPORTS/github-api/branch-protection.err" || true
     gh api "repos/$REPO/collaborators" > "$REPORTS/github-api/collaborators.json" 2>"$REPORTS/github-api/collaborators.err" || true
+    cp "$REPORTS/github-api/collaborators.json" "$ROOT/.testable/github/collaborators.json" 2>/dev/null || true
+    cp "$REPORTS/github-api/branch-protection.json" "$ROOT/.testable/github/branch-protection.json" 2>/dev/null || true
   fi
 fi
 

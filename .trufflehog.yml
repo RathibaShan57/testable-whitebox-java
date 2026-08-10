@@ -1,0 +1,7 @@
+# Trufflehog git-history scan configuration (Security / Compliance Code sheets)
+detectors:
+  - name: custom
+  - name: github
+  - name: gitlab
+  - name: aws
+  - name: generic

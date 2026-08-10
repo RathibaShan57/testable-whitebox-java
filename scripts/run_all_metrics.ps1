@@ -46,11 +46,21 @@ function Test-ExeAvailable {
 
 # --- White Box + Performance Code (Maven family) ---
 Invoke-MetricTool 'Maven test + JaCoCo prepare-agent' {
-    mvn -q -DskipTests=false test
+    mvn -q -DskipTests=false test jacoco:report verify -Pcoverage-delta
 }
 
-Invoke-MetricTool 'JaCoCo report' {
-    mvn -q jacoco:report
+Invoke-MetricTool 'PMD java-perf-dependency profile' {
+    mvn -q -Pjava-perf-dependency pmd:pmd
+    if (-not (Test-Path "target\pmd.xml")) {
+        Write-Host "target/pmd.xml missing after java-perf-dependency profile" -ForegroundColor Red
+    }
+}
+
+Invoke-MetricTool 'Coverage delta summary' {
+    python scripts/run_coverage_delta.py
+}
+
+Invoke-MetricTool 'JaCoCo report copy' {
     if (Test-Path "target\site\jacoco") {
         Copy-Item -Recurse -Force "target\site\jacoco\*" (Join-Path $ReportsDir "jacoco\")
     }
@@ -96,6 +106,11 @@ Invoke-MetricTool 'SpotBugs SAST and concurrency' {
 if (-not $SkipDependencyCheck) {
     Invoke-MetricTool 'OWASP Dependency-Check' {
         mvn -q org.owasp:dependency-check-maven:check
+        if (Test-Path "target\dependency-check-report.xml") {
+            Copy-Item "target\dependency-check-report.*" (Join-Path $ReportsDir "dependency-check\") -Force
+        } else {
+            Write-Host "target/dependency-check-report.xml missing" -ForegroundColor Red
+        }
     }
 } else {
     Write-Host ""
@@ -186,6 +201,17 @@ Invoke-MetricTool 'detect-secrets' {
 }
 
 Invoke-MetricTool 'Trufflehog git history secrets' {
+    $out = Join-Path $ReportsDir "trufflehog\trufflehog-git.json"
+    if (Test-ExeAvailable "trufflehog") {
+        trufflehog git file://. --json > $out 2>(Join-Path $ReportsDir "trufflehog\trufflehog-git.log")
+    } elseif (Test-ExeAvailable "docker") {
+        docker run --rm -v "${Root}:/repo" trufflesecurity/trufflehog:latest git file:///repo --json > $out
+    } else {
+        Write-Host "trufflehog not available - skipped" -ForegroundColor Yellow
+    }
+}
+
+Invoke-MetricTool 'Trufflehog filesystem secrets' {
     $out = Join-Path $ReportsDir "trufflehog\trufflehog.json"
     if (Test-ExeAvailable "trufflehog") {
         trufflehog filesystem . --json > $out 2>(Join-Path $ReportsDir "trufflehog\trufflehog.log")
@@ -245,6 +271,8 @@ Invoke-MetricTool 'GitHub Branch Protection Access API' {
             gh api "repos/$repo/branches/master/protection" > (Join-Path $ReportsDir "github-api\branch-protection.json") 2> (Join-Path $ReportsDir "github-api\branch-protection.err")
             gh api "repos/$repo/collaborators" > (Join-Path $ReportsDir "github-api\collaborators.json") 2> (Join-Path $ReportsDir "github-api\collaborators.err")
             "repo=$repo" | Set-Content (Join-Path $ReportsDir "github-api\repo.txt")
+            Copy-Item (Join-Path $ReportsDir "github-api\collaborators.json") ".testable\github\collaborators.json" -Force -ErrorAction SilentlyContinue
+            Copy-Item (Join-Path $ReportsDir "github-api\branch-protection.json") ".testable\github\branch-protection.json" -Force -ErrorAction SilentlyContinue
         } else {
             "gh repo view failed - not a GitHub remote?" | Set-Content (Join-Path $ReportsDir "github-api\skip.txt")
         }

@@ -1,0 +1,4 @@
+﻿{
+  "note": "Branch protection not enabled on this sample repo; taxonomy gate uses this artifact when live API is unavailable.",
+  "enabled": false
+}

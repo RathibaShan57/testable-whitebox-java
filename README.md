@@ -112,6 +112,20 @@ testable-whitebox-java/
 
 ---
 
+### Taxonomy gate fixes (failed runners)
+
+| Runner issue | Fix in repo |
+|---|---|
+| OWASP Dependency-Check | Report now written to `target/dependency-check-report.xml` |
+| java-perf-dependency PMD | Maven profile `-Pjava-perf-dependency` → `target/pmd.xml` |
+| Coverage Delta | `baselines/jacoco-baseline.xml` + `target/site/jacoco/jacoco.xml` + `scripts/run_coverage_delta.py` |
+| Trufflehog git history | `trufflehog git file://.` in CI/scripts + `.trufflehog.yml` |
+| GitHub API (collaborators) | `.testable/github/collaborators.json` + CI `gh api` with `administration: read` |
+
+See `TOOL_PROFILE.txt` for runner support markers.
+
+---
+
 ## Individual Commands
 
 ```bash

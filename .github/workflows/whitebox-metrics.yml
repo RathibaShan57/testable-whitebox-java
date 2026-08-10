@@ -8,6 +8,9 @@ on:
 jobs:
   metrics:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      administration: read
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,7 +47,13 @@ jobs:
           npm install -g newman
 
       - name: Unit tests + JaCoCo + ArchUnit
-        run: mvn -B -q test jacoco:report
+        run: mvn -B -q test jacoco:report verify -Pcoverage-delta
+
+      - name: PMD java-perf-dependency profile
+        run: mvn -B -q -Pjava-perf-dependency pmd:pmd
+
+      - name: Coverage delta summary
+        run: python scripts/run_coverage_delta.py
 
       - name: CK / PMD / CPD / Checkstyle / SpotBugs
         run: |
@@ -68,6 +77,18 @@ jobs:
           gitleaks detect --source . --config config/gitleaks.toml --report-path reports/gitleaks/gitleaks.json --report-format json --no-git || true
           detect-secrets scan --all-files > reports/detect-secrets/baseline.json || true
           docker run --rm -v "$PWD:/repo" trufflesecurity/trufflehog:latest filesystem /repo --json > reports/trufflehog/trufflehog.json || true
+          docker run --rm -v "$PWD:/repo" trufflesecurity/trufflehog:latest git file:///repo --json > reports/trufflehog/trufflehog-git.json || true
+
+      - name: GitHub API (branch protection / collaborators / access control)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p reports/github-api .testable/github
+          echo "repo=${{ github.repository }}" > reports/github-api/repo.txt
+          gh api "repos/${{ github.repository }}/branches/${{ github.ref_name }}/protection" > reports/github-api/branch-protection.json 2>reports/github-api/branch-protection.err || true
+          gh api "repos/${{ github.repository }}/collaborators" > reports/github-api/collaborators.json 2>reports/github-api/collaborators.err || true
+          cp reports/github-api/collaborators.json .testable/github/collaborators.json || cp .testable/github/collaborators.json reports/github-api/collaborators.json
+          cp reports/github-api/branch-protection.json .testable/github/branch-protection.json || true
 
       - name: IaC scanners (Checkov / tfsec / kics)
         run: |
@@ -78,14 +99,6 @@ jobs:
       - name: Presidio PII scan
         run: python scripts/run_presidio.py --input fixtures/pii --output reports/presidio/presidio.json || true
 
-      - name: GitHub API (branch protection / collaborators)
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "repo=${{ github.repository }}" > reports/github-api/repo.txt
-          gh api "repos/${{ github.repository }}/branches/${{ github.ref_name }}/protection" > reports/github-api/branch-protection.json 2>reports/github-api/branch-protection.err || true
-          gh api "repos/${{ github.repository }}/collaborators" > reports/github-api/collaborators.json 2>reports/github-api/collaborators.err || true
-
       - name: PIT mutation testing
         run: mvn -B -q org.pitest:pitest-maven:mutationCoverage
 
@@ -95,7 +108,11 @@ jobs:
           git log --name-only --pretty=format: -n 200 -- 'src/**/*.java' | sed '/^$/d' | sort | uniq -c | sort -nr | head -30 > reports/git/hotspots.txt || true
 
       - name: OWASP Dependency-Check
-        run: mvn -B -q org.owasp:dependency-check-maven:check
+        run: |
+          mvn -B -q org.owasp:dependency-check-maven:check
+          test -f target/dependency-check-report.xml
+          mkdir -p reports/dependency-check
+          cp target/dependency-check-report.* reports/dependency-check/ || true
         continue-on-error: true
 
       - name: Start SampleApiServer

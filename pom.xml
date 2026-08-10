@@ -92,6 +92,10 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
+                <configuration>
+                    <!-- Taxonomy gate expects target/site/jacoco/jacoco.xml -->
+                    <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
+                </configuration>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
@@ -101,12 +105,21 @@
                         <id>report</id>
                         <phase>verify</phase>
                         <goals><goal>report</goal></goals>
-                        <configuration>
-                            <outputDirectory>${reports.dir}/jacoco</outputDirectory>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>jacoco-xml</id>
+                        <phase>verify</phase>
+                        <goals><goal>report</goal></goals>
+                        <configuration>
+                            <formats>
+                                <format>XML</format>
+                                <format>HTML</format>
+                                <format>CSV</format>
+                            </formats>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-jacoco-to-reports</id>
                         <phase>verify</phase>
                         <goals><goal>report</goal></goals>
                         <configuration>
@@ -147,6 +160,8 @@
                     <includeTests>false</includeTests>
                     <minimumTokens>40</minimumTokens>
                     <targetJdk>${maven.compiler.release}</targetJdk>
+                    <!-- Taxonomy java-perf-dependency runner reads target/pmd.xml -->
+                    <targetDirectory>${project.build.directory}</targetDirectory>
                     <rulesets>
                         <ruleset>/category/java/bestpractices.xml</ruleset>
                         <ruleset>/category/java/codestyle.xml</ruleset>
@@ -189,8 +204,13 @@
                 <configuration>
                     <failBuildOnCVSS>11</failBuildOnCVSS>
                     <format>ALL</format>
-                    <outputDirectory>${reports.dir}/dependency-check</outputDirectory>
+                    <!-- Taxonomy owasp-depcheck runner reads target/dependency-check-report.xml -->
+                    <outputDirectory>${project.build.directory}</outputDirectory>
                     <nvdApiDelay>4000</nvdApiDelay>
+                    <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
+                    <suppressionFiles>
+                        <suppressionFile>${project.basedir}/config/dependency-check-suppressions.xml</suppressionFile>
+                    </suppressionFiles>
                 </configuration>
             </plugin>
 
@@ -281,6 +301,65 @@
             <id>all-metrics</id>
             <build>
                 <defaultGoal>verify</defaultGoal>
+            </build>
+        </profile>
+        <!-- Taxonomy gate: java-perf-dependency runner -->
+        <profile>
+            <id>java-perf-dependency</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>java-perf-dependency-pmd</id>
+                                <phase>verify</phase>
+                                <goals><goal>pmd</goal></goals>
+                                <configuration>
+                                    <targetDirectory>${project.build.directory}</targetDirectory>
+                                    <includeTests>false</includeTests>
+                                    <rulesets>
+                                        <ruleset>config/pmd-perf-dependency.xml</ruleset>
+                                        <ruleset>/category/java/bestpractices.xml</ruleset>
+                                        <ruleset>/category/java/performance.xml</ruleset>
+                                    </rulesets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Taxonomy gate: Coverage Delta baseline + current JaCoCo XML -->
+        <profile>
+            <id>coverage-delta</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <executions>
+                            <execution>
+                                <id>stage-jacoco-baseline</id>
+                                <phase>verify</phase>
+                                <goals><goal>copy-resources</goal></goals>
+                                <configuration>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>${project.basedir}/baselines</directory>
+                                            <includes>
+                                                <include>jacoco-baseline.xml</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
             </build>
         </profile>
     </profiles>

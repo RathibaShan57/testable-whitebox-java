@@ -22,7 +22,9 @@ dependency-check-data/
 blackbox/playwright/node_modules/
 blackbox/playwright/test-results/
 blackbox/playwright/playwright-report/
-reports_excel_dump.json
+# Taxonomy gate artifact paths (do not gitignore)
+!baselines/
+!.testable/
 __pycache__/
 *.pyc
 .venv/
