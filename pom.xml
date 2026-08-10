@@ -170,6 +170,7 @@
                         <ruleset>/category/java/performance.xml</ruleset>
                         <ruleset>/category/java/security.xml</ruleset>
                         <ruleset>config/pmd-ruleset.xml</ruleset>
+                        <ruleset>config/pmd-perf-dependency.xml</ruleset>
                     </rulesets>
                 </configuration>
             </plugin>
@@ -293,6 +294,31 @@
                     <mainClass>com.testable.whitebox.SampleApiServer</mainClass>
                 </configuration>
             </plugin>
+
+            <!-- Taxonomy gate: stage JaCoCo baseline before tests / coverage delta -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>stage-jacoco-baseline-for-gate</id>
+                        <phase>process-test-resources</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/baselines</directory>
+                                    <includes>
+                                        <include>jacoco-baseline.xml</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -321,9 +347,27 @@
                                     <includeTests>false</includeTests>
                                     <rulesets>
                                         <ruleset>config/pmd-perf-dependency.xml</ruleset>
-                                        <ruleset>/category/java/bestpractices.xml</ruleset>
-                                        <ruleset>/category/java/performance.xml</ruleset>
                                     </rulesets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>stage-pmd-for-gate</id>
+                                <phase>verify</phase>
+                                <goals><goal>run</goal></goals>
+                                <configuration>
+                                    <target>
+                                        <mkdir dir="${project.basedir}/.testable/pmd"/>
+                                        <copy file="${project.build.directory}/pmd.xml"
+                                              tofile="${project.basedir}/.testable/pmd/pmd.xml"
+                                              failonerror="false"/>
+                                    </target>
                                 </configuration>
                             </execution>
                         </executions>
@@ -338,23 +382,23 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <version>3.3.1</version>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.1.0</version>
                         <executions>
                             <execution>
-                                <id>stage-jacoco-baseline</id>
+                                <id>mirror-jacoco-baseline-testable</id>
                                 <phase>verify</phase>
-                                <goals><goal>copy-resources</goal></goals>
+                                <goals><goal>run</goal></goals>
                                 <configuration>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <resources>
-                                        <resource>
-                                            <directory>${project.basedir}/baselines</directory>
-                                            <includes>
-                                                <include>jacoco-baseline.xml</include>
-                                            </includes>
-                                        </resource>
-                                    </resources>
+                                    <target>
+                                        <mkdir dir="${project.basedir}/.testable/jacoco"/>
+                                        <copy file="${project.basedir}/baselines/jacoco-baseline.xml"
+                                              tofile="${project.basedir}/.testable/jacoco/jacoco-baseline.xml"
+                                              failonerror="true"/>
+                                        <copy file="${project.basedir}/baselines/jacoco-baseline.xml"
+                                              tofile="${project.build.directory}/jacoco-baseline.xml"
+                                              failonerror="true"/>
+                                    </target>
                                 </configuration>
                             </execution>
                         </executions>

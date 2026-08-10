@@ -1,5 +1,5 @@
-OWASP Dependency-Check SUPPORT — vulnerable Maven deps; report at target/dependency-check-report.xml
-java-perf-dependency SUPPORT — Maven profile java-perf-dependency runs PMD to target/pmd.xml
-JaCoCo coverage delta SUPPORT — baselines/jacoco-baseline.xml + target/site/jacoco/jacoco.xml
-Trufflehog GIT SUPPORT — trufflehog git file://. for historical secret scan
-GitHub API SUPPORT — collaborators + branch protection via gh api / .testable/github/
+OWASP Dependency-Check SUPPORT — report at target/dependency-check-report.xml
+java-perf-dependency SUPPORT — mvn -Pjava-perf-dependency verify writes target/pmd.xml
+coverage delta SUPPORT — target/jacoco-baseline.xml + target/site/jacoco/jacoco.xml
+trufflehog SUPPORT — trufflehog filesystem . and trufflehog git file://.
+github api / gitlab api SUPPORT — .testable/github/collaborators.json GitHub API fallback

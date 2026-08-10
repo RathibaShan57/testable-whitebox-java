@@ -26,15 +26,24 @@ def pct(covered: int, missed: int) -> float:
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     current = root / "target" / "site" / "jacoco" / "jacoco.xml"
-    baseline = root / "baselines" / "jacoco-baseline.xml"
+    baseline_candidates = (
+        root / "target" / "jacoco-baseline.xml",
+        root / "baselines" / "jacoco-baseline.xml",
+        root / ".testable" / "jacoco" / "jacoco-baseline.xml",
+    )
+    baseline = next((p for p in baseline_candidates if p.is_file()), None)
     out_dir = root / "reports" / "coverage-delta"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if not current.is_file():
         print(f"Missing current JaCoCo report: {current}", file=sys.stderr)
         return 1
-    if not baseline.is_file():
-        print(f"Missing baseline JaCoCo report: {baseline}", file=sys.stderr)
+    if not baseline or not baseline.is_file():
+        print(
+            "Missing baseline JaCoCo report (tried target/jacoco-baseline.xml, "
+            "baselines/jacoco-baseline.xml, .testable/jacoco/jacoco-baseline.xml)",
+            file=sys.stderr,
+        )
         return 1
 
     cur_tree = ET.parse(current)

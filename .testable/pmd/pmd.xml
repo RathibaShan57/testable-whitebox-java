@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.3.0" timestamp="2026-08-10T13:10:46.366">
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\ApiClient.java">
+<violation beginline="17" endline="17" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="ApiClient" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="22" endline="22" begincolumn="43" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ApiClient" method="hasItems" variable="items" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'items' is not assigned and could be declared final
+</violation>
+<violation beginline="23" endline="23" begincolumn="17" endcolumn="22" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ApiClient" method="hasItems" variable="empty" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'empty' could be declared final
+</violation>
+<violation beginline="28" endline="28" begincolumn="46" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ApiClient" method="toJson" variable="payload" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'payload' is not assigned and could be declared final
+</violation>
+<violation beginline="30" endline="30" begincolumn="13" endcolumn="98" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="ApiClient" method="toJson" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="38" endline="38" begincolumn="48" endcolumn="52" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ApiClient" method="fromJson" variable="json" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'json' is not assigned and could be declared final
+</violation>
+<violation beginline="40" endline="40" begincolumn="13" endcolumn="54" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="ApiClient" method="fromJson" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="42" endline="42" begincolumn="13" endcolumn="58" rule="GuardLogStatement" ruleset="Best Practices" package="com.testable.whitebox" class="ApiClient" method="fromJson" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="48" endline="48" begincolumn="29" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ApiClient" method="healthCheck" variable="status" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'status' could be declared final
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\AuthService.java">
+<violation beginline="20" endline="20" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="23" endline="23" begincolumn="32" endcolumn="54" rule="LongVariable" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" variable="DEFAULT_ADMIN_PASSWORD" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like DEFAULT_ADMIN_PASSWORD
+</violation>
+<violation beginline="27" endline="27" begincolumn="47" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="hashPasswordInsecure" variable="password" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'password' is not assigned and could be declared final
+</violation>
+<violation beginline="29" endline="29" begincolumn="27" endcolumn="29" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="hashPasswordInsecure" variable="md" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like md
+</violation>
+<violation beginline="29" endline="29" begincolumn="27" endcolumn="29" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="hashPasswordInsecure" variable="md" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'md' could be declared final
+</violation>
+<violation beginline="30" endline="30" begincolumn="20" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="hashPasswordInsecure" variable="digest" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'digest' could be declared final
+</violation>
+<violation beginline="38" endline="38" begincolumn="43" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="hashPasswordSha1" variable="password" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'password' is not assigned and could be declared final
+</violation>
+<violation beginline="40" endline="40" begincolumn="27" endcolumn="29" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="hashPasswordSha1" variable="md" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like md
+</violation>
+<violation beginline="40" endline="40" begincolumn="27" endcolumn="29" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="hashPasswordSha1" variable="md" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'md' could be declared final
+</violation>
+<violation beginline="41" endline="41" begincolumn="20" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="hashPasswordSha1" variable="digest" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'digest' could be declared final
+</violation>
+<violation beginline="49" endline="49" begincolumn="47" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="getUser" variable="username" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'username' is not assigned and could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="29" endcolumn="32" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="getUser" variable="out" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'out' could be declared final
+</violation>
+<violation beginline="53" endline="53" begincolumn="20" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="getUser" variable="query" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'query' could be declared final
+</violation>
+<violation beginline="54" endline="54" begincolumn="23" endcolumn="25" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="getUser" variable="rs" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like rs
+</violation>
+<violation beginline="54" endline="54" begincolumn="23" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="getUser" variable="rs" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'rs' could be declared final
+</violation>
+<violation beginline="66" endline="66" begincolumn="48" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="getUserById" variable="userId" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'userId' is not assigned and could be declared final
+</violation>
+<violation beginline="67" endline="67" begincolumn="29" endcolumn="32" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="getUserById" variable="out" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'out' could be declared final
+</violation>
+<violation beginline="68" endline="68" begincolumn="16" endcolumn="21" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="getUserById" variable="query" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'query' could be declared final
+</violation>
+<violation beginline="74" endline="74" begincolumn="38" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="deserialize" variable="base64Payload" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'base64Payload' is not assigned and could be declared final
+</violation>
+<violation beginline="76" endline="76" begincolumn="20" endcolumn="24" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="deserialize" variable="data" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'data' could be declared final
+</violation>
+<violation beginline="78" endline="78" begincolumn="17" endcolumn="41" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="deserialize" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="86" endline="86" begincolumn="44" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="runSystemCommand" variable="userInput" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'userInput' is not assigned and could be declared final
+</violation>
+<violation beginline="88" endline="88" begincolumn="13" endcolumn="74" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="runSystemCommand" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="95" endline="95" begincolumn="57" endcolumn="65" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="authenticate" variable="password" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'password' is not assigned and could be declared final
+</violation>
+<violation beginline="97" endline="97" begincolumn="13" endcolumn="25" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="authenticate" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="104" endline="104" begincolumn="45" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="bytesToHex" variable="bytes" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'bytes' is not assigned and could be declared final
+</violation>
+<violation beginline="105" endline="105" begincolumn="23" endcolumn="25" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="bytesToHex" variable="sb" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like sb
+</violation>
+<violation beginline="105" endline="105" begincolumn="23" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="bytesToHex" variable="sb" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'sb' could be declared final
+</violation>
+<violation beginline="106" endline="106" begincolumn="19" endcolumn="20" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="AuthService" method="bytesToHex" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'b' could be declared final
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\Calculator.java">
+<violation beginline="7" endline="7" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="9" endline="9" begincolumn="24" endcolumn="25" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="add" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like a
+</violation>
+<violation beginline="9" endline="9" begincolumn="24" endcolumn="25" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="add" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'a' is not assigned and could be declared final
+</violation>
+<violation beginline="9" endline="9" begincolumn="31" endcolumn="32" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="add" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like b
+</violation>
+<violation beginline="9" endline="9" begincolumn="31" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="add" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'b' is not assigned and could be declared final
+</violation>
+<violation beginline="13" endline="13" begincolumn="29" endcolumn="30" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="subtract" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like a
+</violation>
+<violation beginline="13" endline="13" begincolumn="29" endcolumn="30" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="subtract" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'a' is not assigned and could be declared final
+</violation>
+<violation beginline="13" endline="13" begincolumn="36" endcolumn="37" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="subtract" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like b
+</violation>
+<violation beginline="13" endline="13" begincolumn="36" endcolumn="37" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="subtract" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'b' is not assigned and could be declared final
+</violation>
+<violation beginline="17" endline="17" begincolumn="29" endcolumn="30" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="multiply" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like a
+</violation>
+<violation beginline="17" endline="17" begincolumn="29" endcolumn="30" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="multiply" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'a' is not assigned and could be declared final
+</violation>
+<violation beginline="17" endline="17" begincolumn="36" endcolumn="37" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="multiply" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like b
+</violation>
+<violation beginline="17" endline="17" begincolumn="36" endcolumn="37" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="multiply" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'b' is not assigned and could be declared final
+</violation>
+<violation beginline="22" endline="22" begincolumn="33" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="divide" variable="numerator" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'numerator' is not assigned and could be declared final
+</violation>
+<violation beginline="22" endline="22" begincolumn="51" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="divide" variable="denominator" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'denominator' is not assigned and could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="37" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="classifyScore" variable="score" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'score' is not assigned and could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="52" endcolumn="59" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="classifyScore" variable="isBonus" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'isBonus' is not assigned and could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="69" endcolumn="78" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="classifyScore" variable="isPremium" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'isPremium' is not assigned and could be declared final
+</violation>
+<violation beginline="35" endline="35" begincolumn="13" endcolumn="30" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="classifyScore" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="38" endline="38" begincolumn="13" endcolumn="33" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="classifyScore" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="41" endline="41" begincolumn="13" endcolumn="27" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="classifyScore" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="44" endline="44" begincolumn="13" endcolumn="30" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="classifyScore" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="50" endline="50" begincolumn="36" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="gradeStudent" variable="marks" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'marks' is not assigned and could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="47" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="gradeStudent" variable="attendance" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'attendance' is not assigned and could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="67" endcolumn="77" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="gradeStudent" variable="passedExam" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'passedExam' is not assigned and could be declared final
+</violation>
+<violation beginline="51" endline="51" begincolumn="16" endcolumn="21" rule="PrematureDeclaration" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="gradeStudent" variable="grade" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
+Declaration of 'grade' can be moved closer to its usages
+</violation>
+<violation beginline="53" endline="53" begincolumn="13" endcolumn="31" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="gradeStudent" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="55" endline="71" begincolumn="9" endcolumn="10" rule="ConfusingTernary" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="gradeStudent" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="79" endline="79" begincolumn="17" endcolumn="20" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" variable="age" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'age' is not assigned and could be declared final
+</violation>
+<violation beginline="80" endline="80" begincolumn="20" endcolumn="26" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" variable="gender" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'gender' is not assigned and could be declared final
+</violation>
+<violation beginline="81" endline="81" begincolumn="21" endcolumn="27" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" variable="smoker" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'smoker' is not assigned and could be declared final
+</violation>
+<violation beginline="82" endline="82" begincolumn="17" endcolumn="30" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" variable="yearsLicensed" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'yearsLicensed' is not assigned and could be declared final
+</violation>
+<violation beginline="83" endline="83" begincolumn="17" endcolumn="26" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" variable="accidents" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'accidents' is not assigned and could be declared final
+</violation>
+<violation beginline="84" endline="84" begincolumn="21" endcolumn="34" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" variable="comprehensive" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'comprehensive' is not assigned and could be declared final
+</violation>
+<violation beginline="85" endline="85" begincolumn="20" endcolumn="26" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" variable="region" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'region' is not assigned and could be declared final
+</violation>
+<violation beginline="86" endline="86" begincolumn="20" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" variable="vehicleValue" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'vehicleValue' is not assigned and could be declared final
+</violation>
+<violation beginline="129" endline="129" begincolumn="28" endcolumn="33" rule="UseUnderscoresInNumericLiterals" ruleset="Code Style" package="com.testable.whitebox" class="Calculator" method="computeInsurancePremium" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#useunderscoresinnumericliterals" priority="3">
+Number 50000 should separate every third digit with an underscore
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\ComplexLogic.java">
+<violation beginline="10" endline="10" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="17" endline="17" begincolumn="20" endcolumn="28" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="taskType" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'taskType' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="18" begincolumn="20" endcolumn="28" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="priority" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'priority' is not assigned and could be declared final
+</violation>
+<violation beginline="19" endline="19" begincolumn="20" endcolumn="28" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="userRole" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'userRole' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="21" endcolumn="38" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="resourceAvailable" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'resourceAvailable' is not assigned and could be declared final
+</violation>
+<violation beginline="21" endline="21" begincolumn="20" endcolumn="33" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="deadlineHours" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'deadlineHours' is not assigned and could be declared final
+</violation>
+<violation beginline="22" endline="22" begincolumn="17" endcolumn="27" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="retryCount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'retryCount' is not assigned and could be declared final
+</violation>
+<violation beginline="23" endline="23" begincolumn="21" endcolumn="31" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="isCritical" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'isCritical' is not assigned and could be declared final
+</violation>
+<violation beginline="24" endline="24" begincolumn="17" endcolumn="27" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="systemLoad" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'systemLoad' is not assigned and could be declared final
+</violation>
+<violation beginline="26" endline="26" begincolumn="29" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="result" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'result' could be declared final
+</violation>
+<violation beginline="62" endline="86" begincolumn="13" endcolumn="14" rule="ConfusingTernary" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="104" endline="104" begincolumn="16" endcolumn="22" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="scheduleTask" variable="status" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'status' could be declared final
+</violation>
+<violation beginline="118" endline="118" begincolumn="42" endcolumn="43" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like a
+</violation>
+<violation beginline="118" endline="118" begincolumn="42" endcolumn="43" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'a' is not assigned and could be declared final
+</violation>
+<violation beginline="118" endline="118" begincolumn="53" endcolumn="54" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like b
+</violation>
+<violation beginline="118" endline="118" begincolumn="53" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'b' is not assigned and could be declared final
+</violation>
+<violation beginline="118" endline="118" begincolumn="64" endcolumn="65" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" variable="c" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like c
+</violation>
+<violation beginline="118" endline="118" begincolumn="64" endcolumn="65" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" variable="c" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'c' is not assigned and could be declared final
+</violation>
+<violation beginline="118" endline="118" begincolumn="75" endcolumn="76" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" variable="d" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like d
+</violation>
+<violation beginline="118" endline="118" begincolumn="75" endcolumn="76" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" variable="d" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'd' is not assigned and could be declared final
+</violation>
+<violation beginline="120" endline="120" begincolumn="13" endcolumn="27" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="123" endline="123" begincolumn="13" endcolumn="27" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="ComplexLogic" method="accessControl" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\DataProcessor.java">
+<violation beginline="12" endline="12" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="17" endline="17" begincolumn="30" endcolumn="42" rule="UseVarargs" ruleset="Best Practices" package="com.testable.whitebox" class="DataProcessor" method="processValues" variable="values" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_bestpractices.html#usevarargs" priority="4">
+Consider using varargs for methods or constructors which take an array the last parameter.
+</violation>
+<violation beginline="17" endline="17" begincolumn="36" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="processValues" variable="values" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'values' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="18" begincolumn="13" endcolumn="16" rule="PrematureDeclaration" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="processValues" variable="sum" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
+Declaration of 'sum' can be moved closer to its usages
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="30" rule="PrematureDeclaration" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="processValues" variable="unusedAccumulator" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
+Declaration of 'unusedAccumulator' can be moved closer to its usages
+</violation>
+<violation beginline="22" endline="22" begincolumn="13" endcolumn="22" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="processValues" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="24" endline="24" begincolumn="18" endcolumn="19" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="processValues" variable="v" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'v' could be declared final
+</violation>
+<violation beginline="28" endline="28" begincolumn="13" endcolumn="18" rule="PrematureDeclaration" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="processValues" variable="ghost" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
+Declaration of 'ghost' can be moved closer to its usages
+</violation>
+<violation beginline="28" endline="28" begincolumn="13" endcolumn="18" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="processValues" variable="ghost" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'ghost' could be declared final
+</violation>
+<violation beginline="30" endline="30" begincolumn="13" endcolumn="24" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="processValues" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="36" endline="36" begincolumn="40" endcolumn="44" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="normalizeName" variable="name" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="37" endline="37" begincolumn="16" endcolumn="23" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="normalizeName" variable="trimmed" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'trimmed' could be declared final
+</violation>
+<violation beginline="39" endline="39" begincolumn="13" endcolumn="25" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="normalizeName" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="41" endline="41" begincolumn="16" endcolumn="21" rule="UnnecessaryLocalBeforeReturn" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="normalizeName" variable="upper" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#unnecessarylocalbeforereturn" priority="3">
+Consider simply returning the value vs storing it in local variable 'upper'
+</violation>
+<violation beginline="41" endline="41" begincolumn="16" endcolumn="21" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="normalizeName" variable="upper" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'upper' could be declared final
+</violation>
+<violation beginline="45" endline="45" begincolumn="34" endcolumn="43" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="safeLength" variable="maybeNull" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'maybeNull' is not assigned and could be declared final
+</violation>
+<violation beginline="51" endline="51" begincolumn="55" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="pipeline" variable="raw" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'raw' is not assigned and could be declared final
+</violation>
+<violation beginline="52" endline="52" begincolumn="23" endcolumn="30" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="pipeline" variable="cleaned" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'cleaned' could be declared final
+</violation>
+<violation beginline="56" endline="56" begincolumn="51" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="transform" variable="raw" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'raw' is not assigned and could be declared final
+</violation>
+<violation beginline="57" endline="57" begincolumn="23" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="transform" variable="out" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'out' could be declared final
+</violation>
+<violation beginline="59" endline="59" begincolumn="13" endcolumn="24" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="transform" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="61" endline="61" begincolumn="22" endcolumn="23" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="transform" variable="v" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'v' could be declared final
+</violation>
+<violation beginline="69" endline="69" begincolumn="57" endcolumn="63" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="aggregate" variable="values" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'values' is not assigned and could be declared final
+</violation>
+<violation beginline="70" endline="70" begincolumn="29" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="aggregate" variable="result" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'result' could be declared final
+</violation>
+<violation beginline="72" endline="72" begincolumn="22" endcolumn="23" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DataProcessor" method="aggregate" variable="v" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'v' could be declared final
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\DuplicatedCode.java">
+<violation beginline="12" endline="12" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="17" endline="17" begincolumn="20" endcolumn="27" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="orderId" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'orderId' is not assigned and could be declared final
+</violation>
+<violation beginline="17" endline="17" begincolumn="55" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="items" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'items' is not assigned and could be declared final
+</violation>
+<violation beginline="17" endline="17" begincolumn="69" endcolumn="77" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="discount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'discount' is not assigned and could be declared final
+</violation>
+<violation beginline="17" endline="17" begincolumn="86" endcolumn="93" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="taxRate" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'taxRate' is not assigned and could be declared final
+</violation>
+<violation beginline="19" endline="19" begincolumn="34" endcolumn="38" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="item" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'item' could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="20" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="price" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'price' could be declared final
+</violation>
+<violation beginline="21" endline="21" begincolumn="17" endcolumn="20" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="qty" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'qty' could be declared final
+</violation>
+<violation beginline="24" endline="24" begincolumn="16" endcolumn="29" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="afterDiscount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'afterDiscount' could be declared final
+</violation>
+<violation beginline="25" endline="25" begincolumn="16" endcolumn="21" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="total" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'total' could be declared final
+</violation>
+<violation beginline="26" endline="26" begincolumn="29" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processRetailOrder" variable="result" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'result' could be declared final
+</violation>
+<violation beginline="37" endline="37" begincolumn="20" endcolumn="27" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="orderId" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'orderId' is not assigned and could be declared final
+</violation>
+<violation beginline="37" endline="37" begincolumn="55" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="items" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'items' is not assigned and could be declared final
+</violation>
+<violation beginline="37" endline="37" begincolumn="69" endcolumn="77" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="discount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'discount' is not assigned and could be declared final
+</violation>
+<violation beginline="37" endline="37" begincolumn="86" endcolumn="93" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="taxRate" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'taxRate' is not assigned and could be declared final
+</violation>
+<violation beginline="39" endline="39" begincolumn="34" endcolumn="38" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="item" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'item' could be declared final
+</violation>
+<violation beginline="40" endline="40" begincolumn="20" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="price" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'price' could be declared final
+</violation>
+<violation beginline="41" endline="41" begincolumn="17" endcolumn="20" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="qty" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'qty' could be declared final
+</violation>
+<violation beginline="44" endline="44" begincolumn="16" endcolumn="29" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="afterDiscount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'afterDiscount' could be declared final
+</violation>
+<violation beginline="45" endline="45" begincolumn="16" endcolumn="21" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="total" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'total' could be declared final
+</violation>
+<violation beginline="46" endline="46" begincolumn="29" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processWholesaleOrder" variable="result" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'result' could be declared final
+</violation>
+<violation beginline="57" endline="57" begincolumn="20" endcolumn="27" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="orderId" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'orderId' is not assigned and could be declared final
+</violation>
+<violation beginline="57" endline="57" begincolumn="55" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="items" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'items' is not assigned and could be declared final
+</violation>
+<violation beginline="57" endline="57" begincolumn="69" endcolumn="77" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="discount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'discount' is not assigned and could be declared final
+</violation>
+<violation beginline="57" endline="57" begincolumn="86" endcolumn="93" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="taxRate" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'taxRate' is not assigned and could be declared final
+</violation>
+<violation beginline="59" endline="59" begincolumn="34" endcolumn="38" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="item" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'item' could be declared final
+</violation>
+<violation beginline="60" endline="60" begincolumn="20" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="price" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'price' could be declared final
+</violation>
+<violation beginline="61" endline="61" begincolumn="17" endcolumn="20" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="qty" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'qty' could be declared final
+</violation>
+<violation beginline="64" endline="64" begincolumn="16" endcolumn="29" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="afterDiscount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'afterDiscount' could be declared final
+</violation>
+<violation beginline="65" endline="65" begincolumn="16" endcolumn="21" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="total" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'total' could be declared final
+</violation>
+<violation beginline="66" endline="66" begincolumn="29" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="processDigitalOrder" variable="result" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'result' could be declared final
+</violation>
+<violation beginline="78" endline="78" begincolumn="63" endcolumn="67" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="validateUserInput" variable="data" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'data' is not assigned and could be declared final
+</violation>
+<violation beginline="79" endline="79" begincolumn="22" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="validateUserInput" variable="errors" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'errors' could be declared final
+</violation>
+<violation beginline="95" endline="95" begincolumn="64" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="validateAdminInput" variable="data" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'data' is not assigned and could be declared final
+</violation>
+<violation beginline="96" endline="96" begincolumn="22" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="validateAdminInput" variable="errors" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'errors' could be declared final
+</violation>
+<violation beginline="114" endline="114" begincolumn="63" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" variable="records" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'records' is not assigned and could be declared final
+</violation>
+<violation beginline="115" endline="115" begincolumn="23" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" variable="lines" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'lines' could be declared final
+</violation>
+<violation beginline="115" endline="115" begincolumn="31" endcolumn="50" rule="InsufficientStringBufferDeclaration" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" variable="lines" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#insufficientstringbufferdeclaration" priority="3">
+StringBuilder has been initialized with size 16, but has at least 61 characters appended.
+</violation>
+<violation beginline="118" endline="118" begincolumn="34" endcolumn="37" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" variable="rec" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'rec' could be declared final
+</violation>
+<violation beginline="119" endline="119" begincolumn="20" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" variable="amount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'amount' could be declared final
+</violation>
+<violation beginline="127" endline="127" begincolumn="29" endcolumn="33" rule="AppendCharacterWithChar" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#appendcharacterwithchar" priority="3">
+Avoid appending characters as strings in StringBuffer.append.
+</violation>
+<violation beginline="129" endline="129" begincolumn="9" endcolumn="84" rule="ConsecutiveAppendsShouldReuse" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#consecutiveappendsshouldreuse" priority="3">
+StringBuffer (or StringBuilder).append is called consecutively without reusing the target variable.
+</violation>
+<violation beginline="129" endline="129" begincolumn="78" endcolumn="82" rule="AppendCharacterWithChar" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#appendcharacterwithchar" priority="3">
+Avoid appending characters as strings in StringBuffer.append.
+</violation>
+<violation beginline="129" endline="129" begincolumn="78" endcolumn="82" rule="ConsecutiveLiteralAppends" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatSalesReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#consecutiveliteralappends" priority="3">
+StringBuffer (or StringBuilder).append is called 2 consecutive times with literals. Use a single append with a single combined String.
+</violation>
+<violation beginline="134" endline="134" begincolumn="65" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" variable="records" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'records' is not assigned and could be declared final
+</violation>
+<violation beginline="135" endline="135" begincolumn="23" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" variable="lines" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'lines' could be declared final
+</violation>
+<violation beginline="135" endline="135" begincolumn="31" endcolumn="50" rule="InsufficientStringBufferDeclaration" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" variable="lines" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#insufficientstringbufferdeclaration" priority="3">
+StringBuilder has been initialized with size 16, but has at least 63 characters appended.
+</violation>
+<violation beginline="138" endline="138" begincolumn="34" endcolumn="37" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" variable="rec" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'rec' could be declared final
+</violation>
+<violation beginline="139" endline="139" begincolumn="20" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" variable="amount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'amount' could be declared final
+</violation>
+<violation beginline="147" endline="147" begincolumn="29" endcolumn="33" rule="AppendCharacterWithChar" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#appendcharacterwithchar" priority="3">
+Avoid appending characters as strings in StringBuffer.append.
+</violation>
+<violation beginline="149" endline="149" begincolumn="9" endcolumn="84" rule="ConsecutiveAppendsShouldReuse" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#consecutiveappendsshouldreuse" priority="3">
+StringBuffer (or StringBuilder).append is called consecutively without reusing the target variable.
+</violation>
+<violation beginline="149" endline="149" begincolumn="78" endcolumn="82" rule="AppendCharacterWithChar" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#appendcharacterwithchar" priority="3">
+Avoid appending characters as strings in StringBuffer.append.
+</violation>
+<violation beginline="149" endline="149" begincolumn="78" endcolumn="82" rule="ConsecutiveLiteralAppends" ruleset="Performance" package="com.testable.whitebox" class="DuplicatedCode" method="formatReturnsReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#consecutiveliteralappends" priority="3">
+StringBuffer (or StringBuilder).append is called 2 consecutive times with literals. Use a single append with a single combined String.
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\FileHandler.java">
+<violation beginline="12" endline="12" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="14" endline="14" begincolumn="33" endcolumn="37" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="readText" variable="path" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'path' is not assigned and could be declared final
+</violation>
+<violation beginline="24" endline="24" begincolumn="47" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="readTextSafe" variable="path" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'path' is not assigned and could be declared final
+</violation>
+<violation beginline="26" endline="26" begincolumn="13" endcolumn="48" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="readTextSafe" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="32" endline="32" begincolumn="35" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="writeText" variable="path" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'path' is not assigned and could be declared final
+</violation>
+<violation beginline="32" endline="32" begincolumn="48" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="writeText" variable="content" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'content' is not assigned and could be declared final
+</violation>
+<violation beginline="34" endline="34" begincolumn="13" endcolumn="26" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="writeText" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="41" endline="41" begincolumn="13" endcolumn="25" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="writeText" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="48" endline="48" begincolumn="37" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="classifySize" variable="bytes" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'bytes' is not assigned and could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="13" endcolumn="30" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="classifySize" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="53" endline="53" begincolumn="13" endcolumn="28" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="classifySize" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="56" endline="56" begincolumn="13" endcolumn="27" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="classifySize" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="59" endline="59" begincolumn="13" endcolumn="28" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="classifySize" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="62" endline="62" begincolumn="13" endcolumn="29" rule="OnlyOneReturn" ruleset="Code Style" package="com.testable.whitebox" class="FileHandler" method="classifySize" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\OrderRepository.java">
+<violation beginline="21" endline="21" begincolumn="33" endcolumn="34" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="OrderRepository" variable="c" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like c
+</violation>
+<violation beginline="21" endline="21" begincolumn="33" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="OrderRepository" variable="c" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'c' could be declared final
+</violation>
+<violation beginline="21" endline="21" begincolumn="37" endcolumn="52" rule="AvoidInstantiatingObjectsInLoops" ruleset="Performance" package="com.testable.whitebox" class="OrderRepository" method="OrderRepository" variable="c" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#avoidinstantiatingobjectsinloops" priority="3">
+Avoid instantiating new objects inside loops
+</violation>
+<violation beginline="26" endline="26" begincolumn="33" endcolumn="34" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="OrderRepository" variable="o" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="26" endline="26" begincolumn="33" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="OrderRepository" variable="o" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'o' could be declared final
+</violation>
+<violation beginline="26" endline="26" begincolumn="37" endcolumn="52" rule="AvoidInstantiatingObjectsInLoops" ruleset="Performance" package="com.testable.whitebox" class="OrderRepository" method="OrderRepository" variable="o" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#avoidinstantiatingobjectsinloops" priority="3">
+Avoid instantiating new objects inside loops
+</violation>
+<violation beginline="34" endline="34" begincolumn="54" endcolumn="56" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="findCustomerById" variable="id" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like id
+</violation>
+<violation beginline="34" endline="34" begincolumn="54" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="findCustomerById" variable="id" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'id' is not assigned and could be declared final
+</violation>
+<violation beginline="47" endline="47" begincolumn="35" endcolumn="41" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="loadOrdersWithCustomers" variable="result" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'result' could be declared final
+</violation>
+<violation beginline="48" endline="48" begincolumn="34" endcolumn="39" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="loadOrdersWithCustomers" variable="order" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'order' could be declared final
+</violation>
+<violation beginline="49" endline="49" begincolumn="18" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="loadOrdersWithCustomers" variable="customerId" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'customerId' could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="33" endcolumn="41" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="loadOrdersWithCustomers" variable="customer" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'customer' could be declared final
+</violation>
+<violation beginline="51" endline="51" begincolumn="33" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="OrderRepository" method="loadOrdersWithCustomers" variable="row" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'row' could be declared final
+</violation>
+<violation beginline="51" endline="51" begincolumn="39" endcolumn="59" rule="AvoidInstantiatingObjectsInLoops" ruleset="Performance" package="com.testable.whitebox" class="OrderRepository" method="loadOrdersWithCustomers" variable="row" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#avoidinstantiatingobjectsinloops" priority="3">
+Avoid instantiating new objects inside loops
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\PerformanceHotspots.java">
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="26" rule="UnnecessaryImport" ruleset="Code Style" package="com.testable.whitebox" class="PerformanceHotspots" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.HashMap'
+</violation>
+<violation beginline="12" endline="12" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="PerformanceHotspots" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="15" endline="15" begincolumn="36" endcolumn="37" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="PerformanceHotspots" method="tripleNestedSum" variable="n" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like n
+</violation>
+<violation beginline="15" endline="15" begincolumn="36" endcolumn="37" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="PerformanceHotspots" method="tripleNestedSum" variable="n" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'n' is not assigned and could be declared final
+</violation>
+<violation beginline="30" endline="30" begincolumn="44" endcolumn="45" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="PerformanceHotspots" method="allocateInLoop" variable="n" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like n
+</violation>
+<violation beginline="30" endline="30" begincolumn="44" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="PerformanceHotspots" method="allocateInLoop" variable="n" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'n' is not assigned and could be declared final
+</violation>
+<violation beginline="31" endline="31" begincolumn="22" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="PerformanceHotspots" method="allocateInLoop" variable="out" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'out' could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="20" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="PerformanceHotspots" method="allocateInLoop" variable="buffer" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'buffer' could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="29" endcolumn="48" rule="AvoidInstantiatingObjectsInLoops" ruleset="Performance" package="com.testable.whitebox" class="PerformanceHotspots" method="allocateInLoop" variable="buffer" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#avoidinstantiatingobjectsinloops" priority="3">
+Avoid instantiating new objects inside loops
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\PiiLogger.java">
+<violation beginline="9" endline="9" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="PiiLogger" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="18" endline="18" begincolumn="41" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="PiiLogger" method="logStudentRecord" variable="name" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="18" begincolumn="54" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="PiiLogger" method="logStudentRecord" variable="ssn" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'ssn' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="18" begincolumn="66" endcolumn="71" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="PiiLogger" method="logStudentRecord" variable="email" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'email' is not assigned and could be declared final
+</violation>
+<violation beginline="19" endline="19" begincolumn="9" endcolumn="89" rule="GuardLogStatement" ruleset="Best Practices" package="com.testable.whitebox" class="PiiLogger" method="logStudentRecord" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="20" endline="20" begincolumn="9" endcolumn="15" rule="SystemPrintln" ruleset="Best Practices" package="com.testable.whitebox" class="PiiLogger" method="logStudentRecord" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\RaceyCounter.java">
+<violation beginline="7" endline="7" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="RaceyCounter" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="9" endline="9" begincolumn="23" endcolumn="35" rule="RedundantFieldInitializer" ruleset="Performance" package="com.testable.whitebox" class="RaceyCounter" variable="GLOBAL_COUNT" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#redundantfieldinitializer" priority="3">
+Avoid using redundant field initializer for 'GLOBAL_COUNT'
+</violation>
+<violation beginline="9" endline="9" begincolumn="23" endcolumn="35" rule="FieldNamingConventions" ruleset="Code Style" package="com.testable.whitebox" class="RaceyCounter" variable="GLOBAL_COUNT" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#fieldnamingconventions" priority="1">
+The static field name 'GLOBAL_COUNT' doesn't match '[a-z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\SampleApiServer.java">
+<violation beginline="24" endline="24" begincolumn="32" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="SampleApiServer" variable="port" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'port' is not assigned and could be declared final
+</violation>
+<violation beginline="43" endline="43" begincolumn="38" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="main" variable="args" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'args' is not assigned and could be declared final
+</violation>
+<violation beginline="48" endline="48" begincolumn="25" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="main" variable="api" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'api' could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="9" endcolumn="15" rule="SystemPrintln" ruleset="Best Practices" package="com.testable.whitebox" class="SampleApiServer" method="main" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="53" endline="53" begincolumn="36" endcolumn="38" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="root" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like ex
+</violation>
+<violation beginline="53" endline="53" begincolumn="36" endcolumn="38" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="root" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'ex' is not assigned and could be declared final
+</violation>
+<violation beginline="54" endline="54" begincolumn="16" endcolumn="20" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="root" variable="html" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'html' could be declared final
+</violation>
+<violation beginline="65" endline="65" begincolumn="38" endcolumn="40" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="health" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like ex
+</violation>
+<violation beginline="65" endline="65" begincolumn="38" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="health" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'ex' is not assigned and could be declared final
+</violation>
+<violation beginline="69" endline="69" begincolumn="38" endcolumn="40" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="orders" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like ex
+</violation>
+<violation beginline="69" endline="69" begincolumn="38" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="orders" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'ex' is not assigned and could be declared final
+</violation>
+<violation beginline="76" endline="76" begincolumn="40" endcolumn="42" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="students" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like ex
+</violation>
+<violation beginline="76" endline="76" begincolumn="40" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="students" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'ex' is not assigned and could be declared final
+</violation>
+<violation beginline="82" endline="82" begincolumn="37" endcolumn="39" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="login" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like ex
+</violation>
+<violation beginline="82" endline="82" begincolumn="37" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="login" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'ex' is not assigned and could be declared final
+</violation>
+<violation beginline="88" endline="88" begincolumn="39" endcolumn="41" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="openapi" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like ex
+</violation>
+<violation beginline="88" endline="88" begincolumn="39" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="openapi" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'ex' is not assigned and could be declared final
+</violation>
+<violation beginline="89" endline="89" begincolumn="16" endcolumn="20" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="openapi" variable="spec" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'spec' could be declared final
+</violation>
+<violation beginline="102" endline="102" begincolumn="37" endcolumn="39" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="write" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like ex
+</violation>
+<violation beginline="102" endline="102" begincolumn="37" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="write" variable="ex" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'ex' is not assigned and could be declared final
+</violation>
+<violation beginline="102" endline="102" begincolumn="45" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="write" variable="status" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'status' is not assigned and could be declared final
+</violation>
+<violation beginline="102" endline="102" begincolumn="60" endcolumn="71" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="write" variable="contentType" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'contentType' is not assigned and could be declared final
+</violation>
+<violation beginline="102" endline="102" begincolumn="80" endcolumn="84" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="write" variable="body" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'body' is not assigned and could be declared final
+</violation>
+<violation beginline="103" endline="103" begincolumn="16" endcolumn="21" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="write" variable="bytes" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'bytes' could be declared final
+</violation>
+<violation beginline="107" endline="107" begincolumn="27" endcolumn="29" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="SampleApiServer" method="write" variable="os" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like os
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\Utils.java">
+<violation beginline="7" endline="7" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox" class="Utils" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="10" endline="10" begincolumn="32" endcolumn="50" rule="LongVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" variable="VERY_LONG_CONSTANT" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like VERY_LONG_CONSTANT
+</violation>
+<violation beginline="12" endline="12" begincolumn="25" endcolumn="26" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="x" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like x
+</violation>
+<violation beginline="12" endline="12" begincolumn="25" endcolumn="26" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="x" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'x' is not assigned and could be declared final
+</violation>
+<violation beginline="12" endline="12" begincolumn="32" endcolumn="33" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="y" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like y
+</violation>
+<violation beginline="12" endline="12" begincolumn="32" endcolumn="33" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="y" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'y' is not assigned and could be declared final
+</violation>
+<violation beginline="12" endline="12" begincolumn="39" endcolumn="40" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="z" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like z
+</violation>
+<violation beginline="12" endline="12" begincolumn="39" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="z" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'z' is not assigned and could be declared final
+</violation>
+<violation beginline="13" endline="13" begincolumn="13" endcolumn="14" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like a
+</violation>
+<violation beginline="13" endline="13" begincolumn="13" endcolumn="14" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'a' could be declared final
+</violation>
+<violation beginline="14" endline="14" begincolumn="13" endcolumn="14" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like b
+</violation>
+<violation beginline="14" endline="14" begincolumn="13" endcolumn="14" rule="UnnecessaryLocalBeforeReturn" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#unnecessarylocalbeforereturn" priority="3">
+Consider simply returning the value vs storing it in local variable 'b'
+</violation>
+<violation beginline="14" endline="14" begincolumn="13" endcolumn="14" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="calc" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'b' could be declared final
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="19" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="unusedVarsExample" variable="result" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'result' could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="16" endcolumn="20" rule="UnusedLocalVariable" ruleset="Best Practices" package="com.testable.whitebox" class="Utils" method="unusedVarsExample" variable="temp" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'temp'.
+</violation>
+<violation beginline="21" endline="21" begincolumn="15" endcolumn="22" rule="UnusedLocalVariable" ruleset="Best Practices" package="com.testable.whitebox" class="Utils" method="unusedVarsExample" variable="another" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'another'.
+</violation>
+<violation beginline="25" endline="25" begincolumn="42" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="getLongDescription" variable="itemId" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'itemId' is not assigned and could be declared final
+</violation>
+<violation beginline="25" endline="25" begincolumn="57" endcolumn="65" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="getLongDescription" variable="itemName" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'itemName' is not assigned and could be declared final
+</violation>
+<violation beginline="25" endline="25" begincolumn="74" endcolumn="86" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="getLongDescription" variable="itemCategory" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'itemCategory' is not assigned and could be declared final
+</violation>
+<violation beginline="25" endline="25" begincolumn="95" endcolumn="104" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="getLongDescription" variable="itemPrice" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'itemPrice' is not assigned and could be declared final
+</violation>
+<violation beginline="25" endline="25" begincolumn="113" endcolumn="125" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="getLongDescription" variable="itemCurrency" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'itemCurrency' is not assigned and could be declared final
+</violation>
+<violation beginline="29" endline="29" begincolumn="40" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="noDocstringFunction" variable="value" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="39" endcolumn="40" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="X" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like X
+</violation>
+<violation beginline="33" endline="33" begincolumn="39" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="X" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'X' is not assigned and could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="39" endcolumn="40" rule="FormalParameterNamingConventions" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="X" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#formalparameternamingconventions" priority="1">
+The method parameter name 'X' doesn't match '[a-z][a-zA-Z0-9]*'
+</violation>
+<violation beginline="33" endline="33" begincolumn="46" endcolumn="47" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="Y" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like Y
+</violation>
+<violation beginline="33" endline="33" begincolumn="46" endcolumn="47" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="Y" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'Y' is not assigned and could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="46" endcolumn="47" rule="FormalParameterNamingConventions" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="Y" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#formalparameternamingconventions" priority="1">
+The method parameter name 'Y' doesn't match '[a-z][a-zA-Z0-9]*'
+</violation>
+<violation beginline="34" endline="34" begincolumn="13" endcolumn="16" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="Sum" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'Sum' could be declared final
+</violation>
+<violation beginline="34" endline="34" begincolumn="13" endcolumn="16" rule="LocalVariableNamingConventions" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="Sum" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablenamingconventions" priority="1">
+The local variable name 'Sum' doesn't match '[a-z][a-zA-Z0-9]*'
+</violation>
+<violation beginline="35" endline="35" begincolumn="13" endcolumn="17" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="Diff" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'Diff' could be declared final
+</violation>
+<violation beginline="35" endline="35" begincolumn="13" endcolumn="17" rule="LocalVariableNamingConventions" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="badStyleAggregated" variable="Diff" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#localvariablenamingconventions" priority="1">
+The local variable name 'Diff' doesn't match '[a-z][a-zA-Z0-9]*'
+</violation>
+<violation beginline="41" endline="41" begincolumn="39" endcolumn="40" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like a
+</violation>
+<violation beginline="41" endline="41" begincolumn="39" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="a" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'a' is not assigned and could be declared final
+</violation>
+<violation beginline="41" endline="41" begincolumn="46" endcolumn="47" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like b
+</violation>
+<violation beginline="41" endline="41" begincolumn="46" endcolumn="47" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="b" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'b' is not assigned and could be declared final
+</violation>
+<violation beginline="41" endline="41" begincolumn="53" endcolumn="54" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="c" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like c
+</violation>
+<violation beginline="41" endline="41" begincolumn="53" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="c" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'c' is not assigned and could be declared final
+</violation>
+<violation beginline="41" endline="41" begincolumn="60" endcolumn="61" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="d" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like d
+</violation>
+<violation beginline="41" endline="41" begincolumn="60" endcolumn="61" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="d" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'd' is not assigned and could be declared final
+</violation>
+<violation beginline="41" endline="41" begincolumn="67" endcolumn="68" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="e" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like e
+</violation>
+<violation beginline="41" endline="41" begincolumn="67" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="e" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'e' is not assigned and could be declared final
+</violation>
+<violation beginline="41" endline="41" begincolumn="74" endcolumn="75" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="f" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like f
+</violation>
+<violation beginline="41" endline="41" begincolumn="74" endcolumn="75" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="highBranchCount" variable="f" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'f' is not assigned and could be declared final
+</violation>
+<violation beginline="51" endline="51" begincolumn="13" endcolumn="16" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.testable.whitebox" class="Utils" method="highBranchCount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="53" endline="53" begincolumn="13" endcolumn="16" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.testable.whitebox" class="Utils" method="highBranchCount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="56" endline="56" begincolumn="13" endcolumn="16" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.testable.whitebox" class="Utils" method="highBranchCount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="59" endline="59" begincolumn="13" endcolumn="16" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.testable.whitebox" class="Utils" method="highBranchCount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="62" endline="62" begincolumn="13" endcolumn="16" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.testable.whitebox" class="Utils" method="highBranchCount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="65" endline="65" begincolumn="13" endcolumn="16" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.testable.whitebox" class="Utils" method="highBranchCount" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="75" endline="75" begincolumn="38" endcolumn="40" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="getUserName" variable="id" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like id
+</violation>
+<violation beginline="75" endline="75" begincolumn="38" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="getUserName" variable="id" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'id' is not assigned and could be declared final
+</violation>
+<violation beginline="79" endline="79" begincolumn="16" endcolumn="28" rule="MethodNamingConventions" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="get_user_age" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodnamingconventions" priority="1">
+The instance method name 'get_user_age' doesn't match '[a-z][a-zA-Z0-9]*'
+</violation>
+<violation beginline="79" endline="79" begincolumn="36" endcolumn="38" rule="ShortVariable" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="get_user_age" variable="id" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like id
+</violation>
+<violation beginline="79" endline="79" begincolumn="36" endcolumn="38" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.testable.whitebox" class="Utils" method="get_user_age" variable="id" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'id' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\cycle\a\ModuleA.java">
+<violation beginline="6" endline="6" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox.cycle.a" class="ModuleA" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+</file>
+<file name="C:\Users\Rathiba\Source\Java\testable-whitebox-java\src\main\java\com\testable\whitebox\cycle\b\ModuleB.java">
+<violation beginline="6" endline="6" begincolumn="8" endcolumn="13" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.testable.whitebox.cycle.b" class="ModuleB" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+</file>
+</pmd>

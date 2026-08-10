@@ -117,10 +117,10 @@ testable-whitebox-java/
 | Runner issue | Fix in repo |
 |---|---|
 | OWASP Dependency-Check | Report now written to `target/dependency-check-report.xml` |
-| java-perf-dependency PMD | Maven profile `-Pjava-perf-dependency` → `target/pmd.xml` |
-| Coverage Delta | `baselines/jacoco-baseline.xml` + `target/site/jacoco/jacoco.xml` + `scripts/run_coverage_delta.py` |
-| Trufflehog git history | `trufflehog git file://.` in CI/scripts + `.trufflehog.yml` |
-| GitHub API (collaborators) | `.testable/github/collaborators.json` + CI `gh api` with `administration: read` |
+| java-perf-dependency PMD | `mvn -Pjava-perf-dependency verify` → `target/pmd.xml` (+ `.testable/pmd/pmd.xml`) |
+| Coverage Delta | `target/jacoco-baseline.xml` + `target/site/jacoco/jacoco.xml` (baseline staged at `process-test-resources`) |
+| Trufflehog git history | `trufflehog git file://.` + run `scripts/seed_trufflehog_git_history.ps1` once for history bait |
+| GitHub API (collaborators) | `.testable/github/collaborators.json` (GitHub API shape) + live `gh api` in CI |
 
 See `TOOL_PROFILE.txt` for runner support markers.
 

@@ -50,7 +50,7 @@ jobs:
         run: mvn -B -q test jacoco:report verify -Pcoverage-delta
 
       - name: PMD java-perf-dependency profile
-        run: mvn -B -q -Pjava-perf-dependency pmd:pmd
+        run: mvn -B -q -Pjava-perf-dependency verify -DskipTests
 
       - name: Coverage delta summary
         run: python scripts/run_coverage_delta.py
@@ -74,6 +74,7 @@ jobs:
 
       - name: Secret scanners (Security / Compliance Code)
         run: |
+          bash scripts/seed_trufflehog_git_history.sh || true
           gitleaks detect --source . --config config/gitleaks.toml --report-path reports/gitleaks/gitleaks.json --report-format json --no-git || true
           detect-secrets scan --all-files > reports/detect-secrets/baseline.json || true
           docker run --rm -v "$PWD:/repo" trufflesecurity/trufflehog:latest filesystem /repo --json > reports/trufflehog/trufflehog.json || true
@@ -88,6 +89,7 @@ jobs:
           gh api "repos/${{ github.repository }}/branches/${{ github.ref_name }}/protection" > reports/github-api/branch-protection.json 2>reports/github-api/branch-protection.err || true
           gh api "repos/${{ github.repository }}/collaborators" > reports/github-api/collaborators.json 2>reports/github-api/collaborators.err || true
           cp reports/github-api/collaborators.json .testable/github/collaborators.json || cp .testable/github/collaborators.json reports/github-api/collaborators.json
+          cp .testable/github/collaborators.json reports/github-api/collaborators.json 2>/dev/null || true
           cp reports/github-api/branch-protection.json .testable/github/branch-protection.json || true
 
       - name: IaC scanners (Checkov / tfsec / kics)

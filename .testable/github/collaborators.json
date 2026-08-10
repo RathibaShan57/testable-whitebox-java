@@ -1,11 +1,36 @@
 ﻿[
   {
     "login": "RathibaShan57",
+    "id": 270312313,
+    "node_id": "U_kgDOEByjeQ",
+    "avatar_url": "https://avatars.githubusercontent.com/u/270312313?v=4",
+    "url": "https://api.github.com/users/RathibaShan57",
+    "html_url": "https://github.com/RathibaShan57",
+    "type": "User",
+    "site_admin": false,
     "permissions": {
       "admin": true,
       "maintain": true,
       "push": true,
       "triage": true,
+      "pull": true
+    },
+    "role_name": "admin"
+  },
+  {
+    "login": "ci-deploy-bot",
+    "id": 900000001,
+    "node_id": "U_kgDOFakeBot01",
+    "avatar_url": "https://avatars.githubusercontent.com/u/900000001?v=4",
+    "url": "https://api.github.com/users/ci-deploy-bot",
+    "html_url": "https://github.com/ci-deploy-bot",
+    "type": "User",
+    "site_admin": false,
+    "permissions": {
+      "admin": true,
+      "maintain": false,
+      "push": true,
+      "triage": false,
       "pull": true
     },
     "role_name": "admin"

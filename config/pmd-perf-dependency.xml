@@ -4,7 +4,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
     <description>PMD rules for Performance Code Dependency Analysis runner (java-perf-dependency)</description>
-    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
-    <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
+    <!-- Full category refs — individual rule refs break when copied to target/pmd/rulesets/ -->
+    <rule ref="category/java/bestpractices.xml"/>
+    <rule ref="category/java/codestyle.xml"/>
     <rule ref="category/java/performance.xml"/>
 </ruleset>

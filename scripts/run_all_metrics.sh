@@ -18,7 +18,7 @@ run() {
 have() { command -v "$1" >/dev/null 2>&1; }
 
 run "Maven test + JaCoCo + coverage baseline" mvn -q test jacoco:report verify -Pcoverage-delta
-run "PMD java-perf-dependency" mvn -q -Pjava-perf-dependency pmd:pmd
+run "PMD java-perf-dependency" mvn -q -Pjava-perf-dependency verify -DskipTests
 [[ -f target/pmd.xml ]] || echo "WARN: target/pmd.xml missing"
 run "Coverage delta" python3 scripts/run_coverage_delta.py
 [[ -d target/site/jacoco ]] && cp -R target/site/jacoco/* "$REPORTS/jacoco/" || true
@@ -88,7 +88,7 @@ fi
 
 if have trufflehog; then
   run "Trufflehog filesystem" bash -c "trufflehog filesystem . --json > '$REPORTS/trufflehog/trufflehog.json' 2>'$REPORTS/trufflehog/trufflehog.log'"
-  run "Trufflehog git history" bash -c "trufflehog git file://. --json > '$REPORTS/trufflehog/trufflehog-git.json' 2>'$REPORTS/trufflehog/trufflehog-git.log'"
+  run "Trufflehog git history" bash -c "bash scripts/seed_trufflehog_git_history.sh; trufflehog git file://. --json > '$REPORTS/trufflehog/trufflehog-git.json' 2>'$REPORTS/trufflehog/trufflehog-git.log'"
 elif have docker; then
   run "Trufflehog(docker)" bash -c "docker run --rm -v '$ROOT:/repo' trufflesecurity/trufflehog:latest filesystem /repo --json > '$REPORTS/trufflehog/trufflehog.json'"
   run "Trufflehog git(docker)" bash -c "docker run --rm -v '$ROOT:/repo' trufflesecurity/trufflehog:latest git file:///repo --json > '$REPORTS/trufflehog/trufflehog-git.json'"

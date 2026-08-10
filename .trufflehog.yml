@@ -1,7 +1,9 @@
-# Trufflehog git-history scan configuration (Security / Compliance Code sheets)
+# Trufflehog git-history + filesystem scan (Security / Compliance Code sheets)
+# Taxonomy gate: trufflehog git file://.
 detectors:
-  - name: custom
-  - name: github
-  - name: gitlab
-  - name: aws
-  - name: generic
+  - name: AWS
+  - name: Github
+  - name: Gitlab
+  - name: Generic
+  - name: Slack
+  - name: Stripe

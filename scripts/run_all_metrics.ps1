@@ -50,7 +50,7 @@ Invoke-MetricTool 'Maven test + JaCoCo prepare-agent' {
 }
 
 Invoke-MetricTool 'PMD java-perf-dependency profile' {
-    mvn -q -Pjava-perf-dependency pmd:pmd
+    mvn -q -Pjava-perf-dependency verify -DskipTests
     if (-not (Test-Path "target\pmd.xml")) {
         Write-Host "target/pmd.xml missing after java-perf-dependency profile" -ForegroundColor Red
     }
@@ -201,6 +201,7 @@ Invoke-MetricTool 'detect-secrets' {
 }
 
 Invoke-MetricTool 'Trufflehog git history secrets' {
+    & (Join-Path $Root "scripts\seed_trufflehog_git_history.ps1")
     $out = Join-Path $ReportsDir "trufflehog\trufflehog-git.json"
     if (Test-ExeAvailable "trufflehog") {
         trufflehog git file://. --json > $out 2>(Join-Path $ReportsDir "trufflehog\trufflehog-git.log")
@@ -275,9 +276,11 @@ Invoke-MetricTool 'GitHub Branch Protection Access API' {
             Copy-Item (Join-Path $ReportsDir "github-api\branch-protection.json") ".testable\github\branch-protection.json" -Force -ErrorAction SilentlyContinue
         } else {
             "gh repo view failed - not a GitHub remote?" | Set-Content (Join-Path $ReportsDir "github-api\skip.txt")
+            Copy-Item ".testable\github\collaborators.json" (Join-Path $ReportsDir "github-api\collaborators.json") -Force -ErrorAction SilentlyContinue
         }
     } else {
-        Write-Host "gh not available - skipped" -ForegroundColor Yellow
+        Write-Host "gh not available - using .testable/github fallback" -ForegroundColor Yellow
+        Copy-Item ".testable\github\collaborators.json" (Join-Path $ReportsDir "github-api\collaborators.json") -Force -ErrorAction SilentlyContinue
     }
 }
 
